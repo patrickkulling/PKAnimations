@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C45F19A1756861B00EBE5B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */; };
+		D8BEA1E1AA3AE0D8E1626D1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
+		D8BEA46F9983DAC0EBCB8E21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */; };
+		D8BEA5137C92096A785F93AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */; };
+		D8BEA861B8023B3C5CEF06C0 /* PKAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA9BE9C01C03747B1737A /* PKAnimations.m */; };
+		D8BEAA30C7ABE6E901026F27 /* PKAnimations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEA5B3A82E85D9C02E376C /* PKAnimations.h */; };
+		D8BEAAA507776BB617ED5FE3 /* PKAnimationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABDF7C398D79D730C5FA /* PKAnimationsTests.m */; };
+		D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
+		D8BEAD44B6C793105C3975F1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */; };
+		F111332A30D44818AC2B80C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C4C3272F9C47C687CED354 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8BEA50BCBB92D52D821EE94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8BEAEAFF596D00D21B61BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8BEA794BD03D8AFF49A161C;
+			remoteInfo = PKAnimations;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8BEAABB4863042DFB8C9BFC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				D8BEAA30C7ABE6E901026F27 /* PKAnimations.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A743A831E6A748C1AF101401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		B3C4C3272F9C47C687CED354 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BEA372B14C9F8BC4ADEDD9 /* PKAnimationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "PKAnimationsTests-Info.plist"; sourceTree = "<group>"; };
+		D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D8BEA575DEE6975E8CE849EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8BEA5B3A82E85D9C02E376C /* PKAnimations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKAnimations.h; sourceTree = "<group>"; };
+		D8BEA99EFD8288C95BED165C /* libPKAnimations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPKAnimations.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BEA9A60095EF45F6549D88 /* PKAnimations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKAnimations-Prefix.pch"; sourceTree = "<group>"; };
+		D8BEA9BE9C01C03747B1737A /* PKAnimations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKAnimations.m; sourceTree = "<group>"; };
+		D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D8BEABDF7C398D79D730C5FA /* PKAnimationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKAnimationsTests.m; sourceTree = "<group>"; };
+		D8BEAC51B09CAF9930B03F8A /* PKAnimationsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKAnimationsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BEAD0D13C6B40929DE811D /* PKAnimationsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKAnimationsTests.h; sourceTree = "<group>"; };
+		D8BEAD958F901192FEAAA348 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8BEA00C280A1AF0AE14F069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C45F19A1756861B00EBE5B3 /* CoreGraphics.framework in Frameworks */,
+				D8BEA1E1AA3AE0D8E1626D1C /* Foundation.framework in Frameworks */,
+				F111332A30D44818AC2B80C4 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BEA4691928A6E2A73EC38C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8BEAD44B6C793105C3975F1 /* SenTestingKit.framework in Frameworks */,
+				D8BEA5137C92096A785F93AD /* UIKit.framework in Frameworks */,
+				D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8BEA2969519ED05B6E3A5F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEA99EFD8288C95BED165C /* libPKAnimations.a */,
+				D8BEAC51B09CAF9930B03F8A /* PKAnimationsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8BEA3900FA178651B251811 = {
+			isa = PBXGroup;
+			children = (
+				1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */,
+				D8BEA2969519ED05B6E3A5F9 /* Products */,
+				D8BEAEC33F37E01F33B60F1A /* Frameworks */,
+				D8BEAF7CE5209A2B2CD68631 /* PKAnimations */,
+				D8BEA6FC0D2FE0D4027C1552 /* PKAnimationsTests */,
+				A743A831E6A748C1AF101401 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		D8BEA4DE4C2D2C06960965AE /* ease */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ease;
+			sourceTree = "<group>";
+		};
+		D8BEA6FC0D2FE0D4027C1552 /* PKAnimationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEAF9A7A80DF47711FAB05 /* Supporting Files */,
+				D8BEAD0D13C6B40929DE811D /* PKAnimationsTests.h */,
+				D8BEABDF7C398D79D730C5FA /* PKAnimationsTests.m */,
+			);
+			path = PKAnimationsTests;
+			sourceTree = "<group>";
+		};
+		D8BEAC54034D72066032A8CE /* animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		D8BEADBF7906C73F4C865171 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEA9A60095EF45F6549D88 /* PKAnimations-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8BEAEC33F37E01F33B60F1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEAD958F901192FEAAA348 /* Foundation.framework */,
+				D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */,
+				D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */,
+				B3C4C3272F9C47C687CED354 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8BEAF7CE5209A2B2CD68631 /* PKAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEADBF7906C73F4C865171 /* Supporting Files */,
+				D8BEA5B3A82E85D9C02E376C /* PKAnimations.h */,
+				D8BEA9BE9C01C03747B1737A /* PKAnimations.m */,
+				D8BEA4DE4C2D2C06960965AE /* ease */,
+				D8BEAC54034D72066032A8CE /* animation */,
+			);
+			path = PKAnimations;
+			sourceTree = "<group>";
+		};
+		D8BEAF9A7A80DF47711FAB05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEA372B14C9F8BC4ADEDD9 /* PKAnimationsTests-Info.plist */,
+				D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8BEA794BD03D8AFF49A161C /* PKAnimations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8BEAD11FCC83516B95D9E14 /* Build configuration list for PBXNativeTarget "PKAnimations" */;
+			buildPhases = (
+				ECF826B3153B434897418211 /* Check Pods Manifest.lock */,
+				D8BEA388B401627DE79E67AF /* Sources */,
+				D8BEA00C280A1AF0AE14F069 /* Frameworks */,
+				D8BEAABB4863042DFB8C9BFC /* CopyFiles */,
+				F904C00B9218489DAE4A647F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKAnimations;
+			productName = PKAnimations;
+			productReference = D8BEA99EFD8288C95BED165C /* libPKAnimations.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D8BEA8B6D06C6C1E638DD6CB /* PKAnimationsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8BEA17C12EFDB405D827962 /* Build configuration list for PBXNativeTarget "PKAnimationsTests" */;
+			buildPhases = (
+				D8BEAA3D2CA08936C27F44FE /* Sources */,
+				D8BEA4691928A6E2A73EC38C /* Frameworks */,
+				D8BEA94AB45E0263C6C8D589 /* Resources */,
+				D8BEA577C9910B46A05DE37D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8BEA6F6BE6CFC7100F108B9 /* PBXTargetDependency */,
+			);
+			name = PKAnimationsTests;
+			productName = PKAnimationsTests;
+			productReference = D8BEAC51B09CAF9930B03F8A /* PKAnimationsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8BEAEAFF596D00D21B61BBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Patrick Kulling";
+			};
+			buildConfigurationList = D8BEAC9AECBAE7511E46CE2C /* Build configuration list for PBXProject "PKAnimations" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D8BEA3900FA178651B251811;
+			productRefGroup = D8BEA2969519ED05B6E3A5F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8BEA794BD03D8AFF49A161C /* PKAnimations */,
+				D8BEA8B6D06C6C1E638DD6CB /* PKAnimationsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8BEA94AB45E0263C6C8D589 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8BEA46F9983DAC0EBCB8E21 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8BEA577C9910B46A05DE37D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		ECF826B3153B434897418211 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+		F904C00B9218489DAE4A647F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8BEA388B401627DE79E67AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8BEA861B8023B3C5CEF06C0 /* PKAnimations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BEAA3D2CA08936C27F44FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8BEAAA507776BB617ED5FE3 /* PKAnimationsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8BEA6F6BE6CFC7100F108B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8BEA794BD03D8AFF49A161C /* PKAnimations */;
+			targetProxy = D8BEA50BCBB92D52D821EE94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8BEA575DEE6975E8CE849EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8BEA43B14A5574266555320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKAnimations/PKAnimations-Prefix.pch";
+				INFOPLIST_FILE = "PKAnimationsTests/PKAnimationsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		D8BEA5C7822F90CFF11B1FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A743A831E6A748C1AF101401 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/PKAnimations.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKAnimations/PKAnimations-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D8BEAAAC284289538154A83D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8BEADCECF7AD8D07AC986D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A743A831E6A748C1AF101401 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/PKAnimations.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKAnimations/PKAnimations-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D8BEAE637D780021DB46F648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D8BEAE7E8B2645F5C618F776 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKAnimations/PKAnimations-Prefix.pch";
+				INFOPLIST_FILE = "PKAnimationsTests/PKAnimationsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8BEA17C12EFDB405D827962 /* Build configuration list for PBXNativeTarget "PKAnimationsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BEA43B14A5574266555320 /* Release */,
+				D8BEAE7E8B2645F5C618F776 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8BEAC9AECBAE7511E46CE2C /* Build configuration list for PBXProject "PKAnimations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BEAAAC284289538154A83D /* Release */,
+				D8BEAE637D780021DB46F648 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8BEAD11FCC83516B95D9E14 /* Build configuration list for PBXNativeTarget "PKAnimations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BEA5C7822F90CFF11B1FFE /* Release */,
+				D8BEADCECF7AD8D07AC986D8 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8BEAEAFF596D00D21B61BBB /* Project object */;
+}
