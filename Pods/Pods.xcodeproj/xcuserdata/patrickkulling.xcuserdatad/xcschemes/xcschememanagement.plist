@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-PKAnimationsTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>224C5867CC744EF3A53E4CA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31F6E8CCB65F4F5E8C7F751A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4365432C8EF64D7D9DE85C93</key>
 		<dict>
 			<key>primary</key>

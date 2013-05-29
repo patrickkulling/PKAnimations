@@ -20,8 +20,13 @@
  * THE SOFTWARE.
  */
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <Foundation/Foundation.h>
+#import <MGCommand/MGAsyncCommand.h>
+#import "MGAsyncCommand.h"
+#import "PKEase.h"
 
-@interface PKAnimationsTests : SenTestCase
+@interface PKMoveAnimation : NSObject <MGAsyncCommand>
+@property (nonatomic, copy) MGCommandCompleteHandler completeHandler;
 
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease;
 @end
