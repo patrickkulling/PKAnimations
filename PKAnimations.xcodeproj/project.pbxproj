@@ -10,12 +10,16 @@
 		1C45F19A1756861B00EBE5B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */; };
 		D8BEA1E1AA3AE0D8E1626D1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEA46F9983DAC0EBCB8E21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */; };
+		D8BEA4CE0BD4D3EC34184F61 /* PKEaseLinear.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */; };
 		D8BEA5137C92096A785F93AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */; };
+		D8BEA685B341D738B3438F68 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
 		D8BEA861B8023B3C5CEF06C0 /* PKAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA9BE9C01C03747B1737A /* PKAnimations.m */; };
 		D8BEAA30C7ABE6E901026F27 /* PKAnimations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEA5B3A82E85D9C02E376C /* PKAnimations.h */; };
 		D8BEAAA507776BB617ED5FE3 /* PKAnimationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABDF7C398D79D730C5FA /* PKAnimationsTests.m */; };
 		D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEAD44B6C793105C3975F1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */; };
+		D8BEAE880D866D544A1EC5E4 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
+		D8BEAFBDAA0B4A2E090B8DF3 /* PKEase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
 		F111332A30D44818AC2B80C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C4C3272F9C47C687CED354 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,8 @@
 			dstSubfolderSpec = 16;
 			files = (
 				D8BEAA30C7ABE6E901026F27 /* PKAnimations.h in CopyFiles */,
+				D8BEAFBDAA0B4A2E090B8DF3 /* PKEase.h in CopyFiles */,
+				D8BEA4CE0BD4D3EC34184F61 /* PKEaseLinear.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +52,7 @@
 		1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A743A831E6A748C1AF101401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		B3C4C3272F9C47C687CED354 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEaseLinear.m; sourceTree = "<group>"; };
 		D8BEA372B14C9F8BC4ADEDD9 /* PKAnimationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "PKAnimationsTests-Info.plist"; sourceTree = "<group>"; };
 		D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8BEA575DEE6975E8CE849EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -54,10 +61,12 @@
 		D8BEA9A60095EF45F6549D88 /* PKAnimations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKAnimations-Prefix.pch"; sourceTree = "<group>"; };
 		D8BEA9BE9C01C03747B1737A /* PKAnimations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKAnimations.m; sourceTree = "<group>"; };
 		D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D8BEABC624AE80EBB6AE76D7 /* PKEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEase.h; sourceTree = "<group>"; };
 		D8BEABDF7C398D79D730C5FA /* PKAnimationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKAnimationsTests.m; sourceTree = "<group>"; };
 		D8BEAC51B09CAF9930B03F8A /* PKAnimationsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKAnimationsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEAD0D13C6B40929DE811D /* PKAnimationsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKAnimationsTests.h; sourceTree = "<group>"; };
 		D8BEAD958F901192FEAAA348 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEaseLinear.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,9 @@
 		D8BEA4DE4C2D2C06960965AE /* ease */ = {
 			isa = PBXGroup;
 			children = (
+				D8BEABC624AE80EBB6AE76D7 /* PKEase.h */,
+				D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */,
+				D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */,
 			);
 			path = ease;
 			sourceTree = "<group>";
@@ -297,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8BEA861B8023B3C5CEF06C0 /* PKAnimations.m in Sources */,
+				D8BEA685B341D738B3438F68 /* PKEaseLinear.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8BEAAA507776BB617ED5FE3 /* PKAnimationsTests.m in Sources */,
+				D8BEAE880D866D544A1EC5E4 /* PKEaseLinear.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
