@@ -63,6 +63,41 @@ SPEC_BEGIN(PKMoveAnimationSpec)
 														 ease: ease];
 					});
 				});
+
+				context(@"when view is nil", ^{
+					it(@"will fail", ^{
+						[[theBlock(^
+						{
+							[[PKMoveAnimation alloc] initWithView: nil
+														 duration: 1.0f
+															   by: CGPointZero
+															 ease: [[PKEaseLinear alloc] init]];
+						}) should] raise];
+					});
+				});
+
+				context(@"when ease is nil", ^{
+					it(@"will fail", ^{
+						[[theBlock(^
+						{
+							[[PKMoveAnimation alloc] initWithView: [[UIView alloc] init]
+														 duration: 1.0f
+															   by: CGPointZero
+															 ease: nil];
+						}) should] raise];
+					});
+				});
+			});
+
+			context(@"when initWithView:duration:by: is called", ^{
+				it(@"will not fail", ^{
+					[[theBlock(^
+					{
+						[[PKMoveAnimation alloc] initWithView: [[UIView alloc] init]
+													 duration: 1.0f
+														   by: CGPointZero];
+					}) shouldNot] raise];
+				});
 			});
 
 			context(@"when execute: is called", ^{
@@ -78,8 +113,7 @@ SPEC_BEGIN(PKMoveAnimationSpec)
 					it(@"will move the view immediatly", ^{
 						PKMoveAnimation *animation = [[PKMoveAnimation alloc] initWithView: view
 																				  duration: 0.0f
-																						by: moveBy
-																					  ease: nil];
+																						by: moveBy];
 
 						[animation execute];
 
@@ -91,8 +125,7 @@ SPEC_BEGIN(PKMoveAnimationSpec)
 					it(@"will add the animation", ^{
 						PKMoveAnimation *animation = [[PKMoveAnimation alloc] initWithView: view
 																				  duration: 1.0f
-																						by: moveBy
-																					  ease: nil];
+																						by: moveBy];
 
 						[[view.layer should] receive: @selector(addAnimation:forKey:)];
 

@@ -42,9 +42,17 @@ static const CGFloat FPS = 30.0f;
 @implementation PKMoveAnimation {
 }
 
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint const)by {
+ 	self = [self initWithView: view duration: duration by: by ease: [[PKEaseLinear alloc] init]];
+	return self;
+}
+
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease {
 	if(self = [super init])
 	{
+		NSAssert(view, @"view is nil!");
+		NSAssert(ease, @"ease is nil! Use initWithView:duration:by:ease: instead");
+
    		self.view = view;
    		self.duration = duration;
    		self.by = by;

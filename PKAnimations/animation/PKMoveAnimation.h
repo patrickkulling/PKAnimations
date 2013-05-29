@@ -28,5 +28,7 @@
 @interface PKMoveAnimation : NSObject <MGAsyncCommand>
 @property (nonatomic, copy) MGCommandCompleteHandler completeHandler;
 
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint const)by;
+
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease;
 @end
