@@ -21,6 +21,7 @@
 		D8BEAE880D866D544A1EC5E4 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
 		D8BEAFBDAA0B4A2E090B8DF3 /* PKEase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
 		F111332A30D44818AC2B80C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C4C3272F9C47C687CED354 /* libPods.a */; };
+		F54E5478BD7B43679DA76707 /* libPods-PKAnimationsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */; settings = {}; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A743A831E6A748C1AF101401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PKAnimationsTests.xcconfig"; path = "Pods/Pods-PKAnimationsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B3C4C3272F9C47C687CED354 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEaseLinear.m; sourceTree = "<group>"; };
 		D8BEA372B14C9F8BC4ADEDD9 /* PKAnimationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "PKAnimationsTests-Info.plist"; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		D8BEAD0D13C6B40929DE811D /* PKAnimationsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKAnimationsTests.h; sourceTree = "<group>"; };
 		D8BEAD958F901192FEAAA348 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEaseLinear.h; sourceTree = "<group>"; };
+		E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PKAnimationsTests.a"; path = "libPods-PKAnimationsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 				D8BEAD44B6C793105C3975F1 /* SenTestingKit.framework in Frameworks */,
 				D8BEA5137C92096A785F93AD /* UIKit.framework in Frameworks */,
 				D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */,
+				F54E5478BD7B43679DA76707 /* libPods-PKAnimationsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +115,7 @@
 				D8BEAF7CE5209A2B2CD68631 /* PKAnimations */,
 				D8BEA6FC0D2FE0D4027C1552 /* PKAnimationsTests */,
 				A743A831E6A748C1AF101401 /* Pods.xcconfig */,
+				AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +161,7 @@
 				D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */,
 				D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */,
 				B3C4C3272F9C47C687CED354 /* libPods.a */,
+				E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,10 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8BEA17C12EFDB405D827962 /* Build configuration list for PBXNativeTarget "PKAnimationsTests" */;
 			buildPhases = (
+				92862987BD5843BE81E1547D /* Check Pods Manifest.lock */,
 				D8BEAA3D2CA08936C27F44FE /* Sources */,
 				D8BEA4691928A6E2A73EC38C /* Frameworks */,
 				D8BEA94AB45E0263C6C8D589 /* Resources */,
 				D8BEA577C9910B46A05DE37D /* ShellScript */,
+				871A764899154895A83637F1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +248,8 @@
 			mainGroup = D8BEA3900FA178651B251811;
 			productRefGroup = D8BEA2969519ED05B6E3A5F9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				D8BEA794BD03D8AFF49A161C /* PKAnimations */,
@@ -260,6 +270,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		871A764899154895A83637F1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PKAnimationsTests-resources.sh\"\n";
+			showEnvVarsInLog = 1;
+		};
+		92862987BD5843BE81E1547D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 1;
+		};
 		D8BEA577C9910B46A05DE37D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +386,7 @@
 /* Begin XCBuildConfiguration section */
 		D8BEA43B14A5574266555320 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -355,6 +396,7 @@
 				GCC_PREFIX_HEADER = "PKAnimations/PKAnimations-Prefix.pch";
 				INFOPLIST_FILE = "PKAnimationsTests/PKAnimationsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -440,6 +482,7 @@
 		};
 		D8BEAE7E8B2645F5C618F776 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -449,6 +492,7 @@
 				GCC_PREFIX_HEADER = "PKAnimations/PKAnimations-Prefix.pch";
 				INFOPLIST_FILE = "PKAnimationsTests/PKAnimationsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;

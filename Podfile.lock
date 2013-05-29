@@ -1,10 +1,13 @@
 PODS:
+  - Kiwi (2.1)
   - MGCommand (0.1.1)
 
 DEPENDENCIES:
+  - Kiwi
   - MGCommand (= 0.1.1)
 
 SPEC CHECKSUMS:
+  Kiwi: 054ef97d0e50c279b21113a0880a906fa153a7fd
   MGCommand: d1153a38297a5de516269f3abd0644b27922807c
 
 COCOAPODS: 0.18.1
