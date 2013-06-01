@@ -26,8 +26,6 @@
 #import "PKMoveAnimation.h"
 #import "PKEaseLinear.h"
 
-
-
 static const NSString *kGZAnimationKeyPrefix = @"PKMoveAnimation";
 static const CGFloat FPS = 30.0f;
 

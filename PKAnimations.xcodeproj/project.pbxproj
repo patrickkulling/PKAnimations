@@ -17,19 +17,23 @@
 		D8BEA0EE0767A2C39B15207B /* PKMoveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */; };
 		D8BEA1E1AA3AE0D8E1626D1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEA34B4A60812400E3081A /* PKFadeAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAC841C24ECB7EC4CFC89 /* PKFadeAnimation.h */; };
+		D8BEA3FAB7C7DA05060D1B9C /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
 		D8BEA46F9983DAC0EBCB8E21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */; };
 		D8BEA4CE0BD4D3EC34184F61 /* PKEaseLinear.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */; };
 		D8BEA5137C92096A785F93AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */; };
 		D8BEA566BE82EF14012F786D /* PKMoveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */; };
+		D8BEA57EA3F98717EB1FE08E /* PKScaleAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABFCDCD8C2CFA9B6C959 /* PKScaleAnimation.h */; };
 		D8BEA5DD2C3606A1E4342861 /* PKFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAA88FFD20BE29684B49C /* PKFadeAnimation.m */; };
 		D8BEA657AAC9624D6AE0D288 /* PKFadeAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAFAFF2A29AEFCC48160F /* PKFadeAnimationSpec.m */; };
 		D8BEA685B341D738B3438F68 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
 		D8BEA737FDC0E9F680464732 /* PKMoveAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAC45D26940337EFFB7B4 /* PKMoveAnimation.h */; };
 		D8BEAA3070A4F23DACDAF533 /* PKMoveAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA7CCAED03001C5DDD858 /* PKMoveAnimationSpec.m */; };
+		D8BEAC1CF6285EC90E48183A /* PKScaleAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAF798727FD4448140ED8 /* PKScaleAnimationSpec.m */; };
 		D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEAD44B6C793105C3975F1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */; };
 		D8BEAE880D866D544A1EC5E4 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
 		D8BEAFBDAA0B4A2E090B8DF3 /* PKEase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
+		D8BEAFD5F85D73B087E7F100 /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
 		F111332A30D44818AC2B80C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C4C3272F9C47C687CED354 /* libPods.a */; };
 		F54E5478BD7B43679DA76707 /* libPods-PKAnimationsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */; };
 /* End PBXBuildFile section */
@@ -55,6 +59,7 @@
 				D8BEA4CE0BD4D3EC34184F61 /* PKEaseLinear.h in CopyFiles */,
 				D8BEA737FDC0E9F680464732 /* PKMoveAnimation.h in CopyFiles */,
 				D8BEA34B4A60812400E3081A /* PKFadeAnimation.h in CopyFiles */,
+				D8BEA57EA3F98717EB1FE08E /* PKScaleAnimation.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +82,13 @@
 		D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D8BEABC624AE80EBB6AE76D7 /* PKEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEase.h; sourceTree = "<group>"; };
 		D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKMoveAnimation.m; sourceTree = "<group>"; };
+		D8BEABFCDCD8C2CFA9B6C959 /* PKScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKScaleAnimation.h; sourceTree = "<group>"; };
 		D8BEAC45D26940337EFFB7B4 /* PKMoveAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKMoveAnimation.h; sourceTree = "<group>"; };
 		D8BEAC51B09CAF9930B03F8A /* PKAnimationsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKAnimationsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEAC841C24ECB7EC4CFC89 /* PKFadeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKFadeAnimation.h; sourceTree = "<group>"; };
 		D8BEAD958F901192FEAAA348 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKScaleAnimation.m; sourceTree = "<group>"; };
+		D8BEAF798727FD4448140ED8 /* PKScaleAnimationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKScaleAnimationSpec.m; sourceTree = "<group>"; };
 		D8BEAFAFF2A29AEFCC48160F /* PKFadeAnimationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFadeAnimationSpec.m; sourceTree = "<group>"; };
 		D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEaseLinear.h; sourceTree = "<group>"; };
 		E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PKAnimationsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +161,7 @@
 				D8BEAF9A7A80DF47711FAB05 /* Supporting Files */,
 				D8BEA7CCAED03001C5DDD858 /* PKMoveAnimationSpec.m */,
 				D8BEAFAFF2A29AEFCC48160F /* PKFadeAnimationSpec.m */,
+				D8BEAF798727FD4448140ED8 /* PKScaleAnimationSpec.m */,
 			);
 			path = PKAnimationsTests;
 			sourceTree = "<group>";
@@ -164,6 +173,8 @@
 				D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */,
 				D8BEAA88FFD20BE29684B49C /* PKFadeAnimation.m */,
 				D8BEAC841C24ECB7EC4CFC89 /* PKFadeAnimation.h */,
+				D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */,
+				D8BEABFCDCD8C2CFA9B6C959 /* PKScaleAnimation.h */,
 			);
 			path = animation;
 			sourceTree = "<group>";
@@ -368,6 +379,7 @@
 				D8BEA566BE82EF14012F786D /* PKMoveAnimation.m in Sources */,
 				1C4A01EA1756910B002B7CF0 /* PKEase.h in Sources */,
 				D8BEA5DD2C3606A1E4342861 /* PKFadeAnimation.m in Sources */,
+				D8BEAFD5F85D73B087E7F100 /* PKScaleAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +393,8 @@
 				1C5F1B5B175A7E06004A63CF /* PKEase.h in Sources */,
 				D8BEA0790F9ACCF6382D04B6 /* PKFadeAnimation.m in Sources */,
 				D8BEA657AAC9624D6AE0D288 /* PKFadeAnimationSpec.m in Sources */,
+				D8BEA3FAB7C7DA05060D1B9C /* PKScaleAnimation.m in Sources */,
+				D8BEAC1CF6285EC90E48183A /* PKScaleAnimationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

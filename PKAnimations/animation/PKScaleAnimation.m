@@ -22,13 +22,13 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "PKFadeAnimation.h"
+#import "PKScaleAnimation.h"
 #import "PKEaseLinear.h"
 
-static const NSString *kGZAnimationKeyPrefix = @"PKFadeAnimation";
+static const NSString *kGZAnimationKeyPrefix = @"PKScaleAnimation";
 static const CGFloat FPS = 30.0f;
 
-@interface PKFadeAnimation ()
+@interface PKScaleAnimation ()
 @property(nonatomic, weak) UIView *view;
 @property(nonatomic) float duration;
 @property(nonatomic) float from;
@@ -38,7 +38,7 @@ static const CGFloat FPS = 30.0f;
 @property(nonatomic, strong) CAAnimation *animation;
 @end
 
-@implementation PKFadeAnimation {
+@implementation PKScaleAnimation {
 }
 
 - (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to {
@@ -73,7 +73,7 @@ static const CGFloat FPS = 30.0f;
 
 - (void)execute {
     if([self completesImmediatly])
-        [self fadeImmediatly];
+        [self scaleImmediatly];
     else
         [self startAnimation];
 }
@@ -82,12 +82,12 @@ static const CGFloat FPS = 30.0f;
     return self.duration == 0.0f;
 }
 
-- (void)fadeImmediatly {
-    self.view.alpha = self.to;
+- (void)scaleImmediatly {
+    self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.to, self.to);
 }
 
 - (void)startAnimation {
-    self.view.alpha = self.from;
+    self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.from, self.from);
     [self.view.layer addAnimation: self.animation forKey: self.animationKey];
 }
 
@@ -95,7 +95,8 @@ static const CGFloat FPS = 30.0f;
 }
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
-    [self fadeImmediatly];
+    [self scaleImmediatly];
+
     [self.view.layer removeAnimationForKey: self.animationKey];
 
     self.completeHandler();
@@ -106,7 +107,7 @@ static const CGFloat FPS = 30.0f;
 }
 
 - (CAAnimation *)createAnimation {
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     animation.delegate = self;
     animation.fillMode = kCAFillModeForwards;
     animation.removedOnCompletion = NO;
@@ -132,5 +133,4 @@ static const CGFloat FPS = 30.0f;
 
     return transforms;
 }
-
 @end

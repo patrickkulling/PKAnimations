@@ -25,7 +25,8 @@
 #import "MGAsyncCommand.h"
 #import "PKEase.h"
 
-@interface PKFadeAnimation : NSObject <MGAsyncCommand>
+
+@interface PKScaleAnimation : NSObject <MGAsyncCommand>
 @property (nonatomic, copy) MGCommandCompleteHandler completeHandler;
 
 - (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to;

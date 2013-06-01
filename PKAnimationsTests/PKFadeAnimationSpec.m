@@ -111,7 +111,7 @@ SPEC_BEGIN(PKFadeAnimationSpec)
                 });
 
                 context(@"when duration is 0.0f", ^{
-                    it(@"will move the view immediatly", ^{
+                    it(@"will fade the view immediatly", ^{
                         PKFadeAnimation *animation = [[PKFadeAnimation alloc] initWithView: view
                                                                                   duration: 0.0f
                                                                                       from: 0.0
