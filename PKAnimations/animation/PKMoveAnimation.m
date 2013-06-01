@@ -27,22 +27,23 @@
 #import "PKEaseLinear.h"
 
 
-NSString *kGZAnimationKeyPrefix = @"PKMoveAnimation";
+
+static const NSString *kGZAnimationKeyPrefix = @"PKMoveAnimation";
 static const CGFloat FPS = 30.0f;
 
 @interface PKMoveAnimation ()
-@property(nonatomic, strong) NSString *animationKey;
 @property(nonatomic, weak) UIView *view;
 @property(nonatomic) float duration;
 @property(nonatomic) CGPoint by;
 @property(nonatomic, strong) id<PKEase> ease;
+@property(nonatomic, strong) NSString *animationKey;
 @property(nonatomic, strong) CAAnimation *animation;
 @end
 
 @implementation PKMoveAnimation {
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint const)by {
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by {
  	self = [self initWithView: view duration: duration by: by ease: [[PKEaseLinear alloc] init]];
 	return self;
 }
@@ -108,7 +109,7 @@ static const CGFloat FPS = 30.0f;
 }
 
 - (NSString *)createAnimationKey {
-	return [NSString stringWithFormat: @"%@_%d", kGZAnimationKeyPrefix, [[NSDate date] timeIntervalSince1970]];
+	return [NSString stringWithFormat: @"%@_%f", kGZAnimationKeyPrefix, [[NSDate date] timeIntervalSince1970]];
 }
 
 - (CAAnimation *)createAnimation {

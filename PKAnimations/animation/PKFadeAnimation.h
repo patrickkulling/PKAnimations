@@ -21,14 +21,17 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <MGCommand/MGAsyncCommand.h>
 #import "MGAsyncCommand.h"
 #import "PKEase.h"
 
-@interface PKMoveAnimation : NSObject <MGAsyncCommand>
+@protocol PKEase;
+@class UIView;
+
+
+@interface PKFadeAnimation : NSObject <MGAsyncCommand>
 @property (nonatomic, copy) MGCommandCompleteHandler completeHandler;
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by;
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to;
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to ease:(id<PKEase>) ease;
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease;
 @end

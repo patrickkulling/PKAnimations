@@ -39,8 +39,6 @@ SPEC_BEGIN(PKMoveAnimationSpec)
 
 				context(@"when duration is > 0.0f", ^{
 					it(@"will calculate the position using the given ease", ^{
-
-
 						[[ease should] receive: @selector(getValue:startValue:changeByValue:duration:)
 							  withCountAtLeast: 1];
 
