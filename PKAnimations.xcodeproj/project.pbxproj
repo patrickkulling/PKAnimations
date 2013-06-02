@@ -31,12 +31,14 @@
 		D8BEA158158349910934CAE0 /* PKFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAA88FFD20BE29684B49C /* PKFadeAnimation.m */; };
 		D8BEA1E1AA3AE0D8E1626D1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEA34B4A60812400E3081A /* PKFadeAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAC841C24ECB7EC4CFC89 /* PKFadeAnimation.h */; };
+		D8BEA35CA833ABE485635A65 /* PKEaseBounce.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEA5766D8A5994F2D6A598 /* PKEaseBounce.h */; };
 		D8BEA3FAB7C7DA05060D1B9C /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
 		D8BEA46F9983DAC0EBCB8E21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */; };
 		D8BEA4CE0BD4D3EC34184F61 /* PKEaseLinear.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */; };
 		D8BEA5137C92096A785F93AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */; };
 		D8BEA566BE82EF14012F786D /* PKMoveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */; };
 		D8BEA57EA3F98717EB1FE08E /* PKScaleAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABFCDCD8C2CFA9B6C959 /* PKScaleAnimation.h */; };
+		D8BEA59569F4A37B58E0F9E9 /* PKEaseBounce.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA2D5A155AEF96F56FE4D /* PKEaseBounce.m */; };
 		D8BEA5DD2C3606A1E4342861 /* PKFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAA88FFD20BE29684B49C /* PKFadeAnimation.m */; };
 		D8BEA657AAC9624D6AE0D288 /* PKFadeAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAFAFF2A29AEFCC48160F /* PKFadeAnimationSpec.m */; };
 		D8BEA685B341D738B3438F68 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
@@ -49,7 +51,9 @@
 		D8BEAC1CF6285EC90E48183A /* PKScaleAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAF798727FD4448140ED8 /* PKScaleAnimationSpec.m */; };
 		D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEAD44B6C793105C3975F1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAB51DE0706B62AC35656 /* SenTestingKit.framework */; };
+		D8BEADAA4705EFF14AA6EA85 /* PKEaseBounce.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA2D5A155AEF96F56FE4D /* PKEaseBounce.m */; };
 		D8BEAE880D866D544A1EC5E4 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
+		D8BEAE95F8AD68ACED7A8AE4 /* PKEaseBounce.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA2D5A155AEF96F56FE4D /* PKEaseBounce.m */; };
 		D8BEAFBDAA0B4A2E090B8DF3 /* PKEase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
 		D8BEAFD5F85D73B087E7F100 /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
 		DE522B4681BD422BA276F37B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 370BA1545C9C4B8F86944B0A /* libPods.a */; };
@@ -79,6 +83,7 @@
 				D8BEA737FDC0E9F680464732 /* PKMoveAnimation.h in CopyFiles */,
 				D8BEA34B4A60812400E3081A /* PKFadeAnimation.h in CopyFiles */,
 				D8BEA57EA3F98717EB1FE08E /* PKScaleAnimation.h in CopyFiles */,
+				D8BEA35CA833ABE485635A65 /* PKEaseBounce.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,9 +112,11 @@
 		AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PKAnimationsTests.xcconfig"; path = "Pods/Pods-PKAnimationsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B3C4C3272F9C47C687CED354 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEaseLinear.m; sourceTree = "<group>"; };
+		D8BEA2D5A155AEF96F56FE4D /* PKEaseBounce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEaseBounce.m; sourceTree = "<group>"; };
 		D8BEA372B14C9F8BC4ADEDD9 /* PKAnimationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "PKAnimationsTests-Info.plist"; sourceTree = "<group>"; };
 		D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8BEA575DEE6975E8CE849EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8BEA5766D8A5994F2D6A598 /* PKEaseBounce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEaseBounce.h; sourceTree = "<group>"; };
 		D8BEA5CE3429303C61D72530 /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle.png; sourceTree = "<group>"; };
 		D8BEA7CCAED03001C5DDD858 /* PKMoveAnimationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKMoveAnimationSpec.m; sourceTree = "<group>"; };
 		D8BEA99EFD8288C95BED165C /* libPKAnimations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPKAnimations.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +237,8 @@
 				D8BEABC624AE80EBB6AE76D7 /* PKEase.h */,
 				D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */,
 				D8BEAFE552B7A23303DE79CA /* PKEaseLinear.h */,
+				D8BEA2D5A155AEF96F56FE4D /* PKEaseBounce.m */,
+				D8BEA5766D8A5994F2D6A598 /* PKEaseBounce.h */,
 			);
 			path = ease;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 				D8BEA87A22DA46BDF94F2DB9 /* PKScaleAnimation.m in Sources */,
 				D8BEA7F416CA231638C405C0 /* PKMoveAnimation.m in Sources */,
 				D8BEA158158349910934CAE0 /* PKFadeAnimation.m in Sources */,
+				D8BEA59569F4A37B58E0F9E9 /* PKEaseBounce.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +555,7 @@
 				1C4A01EA1756910B002B7CF0 /* PKEase.h in Sources */,
 				D8BEA5DD2C3606A1E4342861 /* PKFadeAnimation.m in Sources */,
 				D8BEAFD5F85D73B087E7F100 /* PKScaleAnimation.m in Sources */,
+				D8BEAE95F8AD68ACED7A8AE4 /* PKEaseBounce.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +571,7 @@
 				D8BEA657AAC9624D6AE0D288 /* PKFadeAnimationSpec.m in Sources */,
 				D8BEA3FAB7C7DA05060D1B9C /* PKScaleAnimation.m in Sources */,
 				D8BEAC1CF6285EC90E48183A /* PKScaleAnimationSpec.m in Sources */,
+				D8BEADAA4705EFF14AA6EA85 /* PKEaseBounce.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,13 +24,21 @@ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWE
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "PKEaseLinear.h"
+#import <Foundation/Foundation.h>
+#import "PKEase.h"
 
-@implementation PKEaseLinear {
-}
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-	return changeByValue * currentTime / duration + startValue;
-}
+@interface PKEaseBounce : NSObject
+@end
 
+@interface PKEaseBounceIn : NSObject <PKEase>
+-(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
+@end
+
+@interface PKEaseBounceOut : NSObject <PKEase>
+-(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
+@end
+
+@interface PKEaseBounceInOut : NSObject <PKEase>
+-(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
 @end
