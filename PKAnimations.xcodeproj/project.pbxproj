@@ -11,10 +11,24 @@
 		1C4A01EA1756910B002B7CF0 /* PKEase.h in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
 		1C4A01ED175691A0002B7CF0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A01EC1756919F002B7CF0 /* QuartzCore.framework */; };
 		1C4A01EE175691AE002B7CF0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A01EC1756919F002B7CF0 /* QuartzCore.framework */; };
+		1C53C6C3175B7132001E763D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A01EC1756919F002B7CF0 /* QuartzCore.framework */; };
+		1C53C6C4175B714C001E763D /* PKEase.h in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
 		1C5F1B5B175A7E06004A63CF /* PKEase.h in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
+		1CEAEDF0175B6D6F00C898CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */; };
+		1CEAEDF1175B6D6F00C898CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
+		1CEAEDF3175B6D6F00C898CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEAEDF2175B6D6F00C898CE /* CoreGraphics.framework */; };
+		1CEAEDF9175B6D6F00C898CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CEAEDF7175B6D6F00C898CE /* InfoPlist.strings */; };
+		1CEAEDFB175B6D6F00C898CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEAEDFA175B6D6F00C898CE /* main.m */; };
+		1CEAEDFF175B6D6F00C898CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEAEDFE175B6D6F00C898CE /* AppDelegate.m */; };
+		1CEAEE01175B6D6F00C898CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEAEE00175B6D6F00C898CE /* Default.png */; };
+		1CEAEE03175B6D6F00C898CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEAEE02175B6D6F00C898CE /* Default@2x.png */; };
+		1CEAEE05175B6D6F00C898CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEAEE04175B6D6F00C898CE /* Default-568h@2x.png */; };
+		1CEAEE08175B6D6F00C898CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEAEE07175B6D6F00C898CE /* ViewController.m */; };
+		1CEAEE0B175B6D6F00C898CE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CEAEE09175B6D6F00C898CE /* ViewController.xib */; };
 		1CF2E648175693AC00733544 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */; };
 		D8BEA0790F9ACCF6382D04B6 /* PKFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAA88FFD20BE29684B49C /* PKFadeAnimation.m */; };
 		D8BEA0EE0767A2C39B15207B /* PKMoveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */; };
+		D8BEA158158349910934CAE0 /* PKFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAA88FFD20BE29684B49C /* PKFadeAnimation.m */; };
 		D8BEA1E1AA3AE0D8E1626D1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
 		D8BEA34B4A60812400E3081A /* PKFadeAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAC841C24ECB7EC4CFC89 /* PKFadeAnimation.h */; };
 		D8BEA3FAB7C7DA05060D1B9C /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
@@ -27,6 +41,10 @@
 		D8BEA657AAC9624D6AE0D288 /* PKFadeAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAFAFF2A29AEFCC48160F /* PKFadeAnimationSpec.m */; };
 		D8BEA685B341D738B3438F68 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
 		D8BEA737FDC0E9F680464732 /* PKMoveAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEAC45D26940337EFFB7B4 /* PKMoveAnimation.h */; };
+		D8BEA7F416CA231638C405C0 /* PKMoveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEABCFF4A43B926F4AA0F1 /* PKMoveAnimation.m */; };
+		D8BEA87A22DA46BDF94F2DB9 /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
+		D8BEA903FBAB4692B219CC09 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
+		D8BEAA0CCC5D0670BAC752E7 /* rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = D8BEA5CE3429303C61D72530 /* rectangle.png */; };
 		D8BEAA3070A4F23DACDAF533 /* PKMoveAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA7CCAED03001C5DDD858 /* PKMoveAnimationSpec.m */; };
 		D8BEAC1CF6285EC90E48183A /* PKScaleAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEAF798727FD4448140ED8 /* PKScaleAnimationSpec.m */; };
 		D8BEAC864C2EBCCC5BCDDD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BEAD958F901192FEAAA348 /* Foundation.framework */; };
@@ -34,6 +52,7 @@
 		D8BEAE880D866D544A1EC5E4 /* PKEaseLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEA14EE187126DC27C57E3 /* PKEaseLinear.m */; };
 		D8BEAFBDAA0B4A2E090B8DF3 /* PKEase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8BEABC624AE80EBB6AE76D7 /* PKEase.h */; };
 		D8BEAFD5F85D73B087E7F100 /* PKScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BEADD7CC94207D54B81A65 /* PKScaleAnimation.m */; };
+		DE522B4681BD422BA276F37B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 370BA1545C9C4B8F86944B0A /* libPods.a */; };
 		F111332A30D44818AC2B80C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C4C3272F9C47C687CED354 /* libPods.a */; };
 		F54E5478BD7B43679DA76707 /* libPods-PKAnimationsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */; };
 /* End PBXBuildFile section */
@@ -68,6 +87,22 @@
 /* Begin PBXFileReference section */
 		1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1C4A01EC1756919F002B7CF0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1CEAEDEF175B6D6E00C898CE /* PKAnimationsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PKAnimationsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CEAEDF2175B6D6F00C898CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1CEAEDF6175B6D6F00C898CE /* PKAnimationsExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PKAnimationsExample-Info.plist"; sourceTree = "<group>"; };
+		1CEAEDF8175B6D6F00C898CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1CEAEDFA175B6D6F00C898CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CEAEDFC175B6D6F00C898CE /* PKAnimationsExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKAnimationsExample-Prefix.pch"; sourceTree = "<group>"; };
+		1CEAEDFD175B6D6F00C898CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1CEAEDFE175B6D6F00C898CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1CEAEE00175B6D6F00C898CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1CEAEE02175B6D6F00C898CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1CEAEE04175B6D6F00C898CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1CEAEE06175B6D6F00C898CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1CEAEE07175B6D6F00C898CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1CEAEE0A175B6D6F00C898CE /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewController.xib; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		370BA1545C9C4B8F86944B0A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4273FC4425E34C4296BDA3BC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A743A831E6A748C1AF101401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PKAnimationsTests.xcconfig"; path = "Pods/Pods-PKAnimationsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B3C4C3272F9C47C687CED354 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +110,7 @@
 		D8BEA372B14C9F8BC4ADEDD9 /* PKAnimationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "PKAnimationsTests-Info.plist"; sourceTree = "<group>"; };
 		D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8BEA575DEE6975E8CE849EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8BEA5CE3429303C61D72530 /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle.png; sourceTree = "<group>"; };
 		D8BEA7CCAED03001C5DDD858 /* PKMoveAnimationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKMoveAnimationSpec.m; sourceTree = "<group>"; };
 		D8BEA99EFD8288C95BED165C /* libPKAnimations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPKAnimations.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEA9A60095EF45F6549D88 /* PKAnimations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKAnimations-Prefix.pch"; sourceTree = "<group>"; };
@@ -95,6 +131,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1CEAEDEC175B6D6E00C898CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C53C6C3175B7132001E763D /* QuartzCore.framework in Frameworks */,
+				1CEAEDF0175B6D6F00C898CE /* UIKit.framework in Frameworks */,
+				1CEAEDF1175B6D6F00C898CE /* Foundation.framework in Frameworks */,
+				1CEAEDF3175B6D6F00C898CE /* CoreGraphics.framework in Frameworks */,
+				DE522B4681BD422BA276F37B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8BEA00C280A1AF0AE14F069 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,11 +170,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CEAEDF4175B6D6F00C898CE /* PKAnimationsExample */ = {
+			isa = PBXGroup;
+			children = (
+				1CEAEDFD175B6D6F00C898CE /* AppDelegate.h */,
+				1CEAEDFE175B6D6F00C898CE /* AppDelegate.m */,
+				1CEAEE06175B6D6F00C898CE /* ViewController.h */,
+				1CEAEE07175B6D6F00C898CE /* ViewController.m */,
+				1CEAEE09175B6D6F00C898CE /* ViewController.xib */,
+				1CEAEDF5175B6D6F00C898CE /* Supporting Files */,
+				D8BEAC359DBEDD6906D909D8 /* Ressources */,
+			);
+			path = PKAnimationsExample;
+			sourceTree = "<group>";
+		};
+		1CEAEDF5175B6D6F00C898CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CEAEDF6175B6D6F00C898CE /* PKAnimationsExample-Info.plist */,
+				1CEAEDF7175B6D6F00C898CE /* InfoPlist.strings */,
+				1CEAEDFA175B6D6F00C898CE /* main.m */,
+				1CEAEDFC175B6D6F00C898CE /* PKAnimationsExample-Prefix.pch */,
+				1CEAEE00175B6D6F00C898CE /* Default.png */,
+				1CEAEE02175B6D6F00C898CE /* Default@2x.png */,
+				1CEAEE04175B6D6F00C898CE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D8BEA2969519ED05B6E3A5F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				D8BEA99EFD8288C95BED165C /* libPKAnimations.a */,
 				D8BEAC51B09CAF9930B03F8A /* PKAnimationsTests.octest */,
+				1CEAEDEF175B6D6E00C898CE /* PKAnimationsExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,12 +213,14 @@
 			children = (
 				1C4A01EC1756919F002B7CF0 /* QuartzCore.framework */,
 				1C45F1991756861B00EBE5B3 /* CoreGraphics.framework */,
+				1CEAEDF4175B6D6F00C898CE /* PKAnimationsExample */,
 				D8BEA2969519ED05B6E3A5F9 /* Products */,
 				D8BEAEC33F37E01F33B60F1A /* Frameworks */,
 				D8BEAF7CE5209A2B2CD68631 /* PKAnimations */,
 				D8BEA6FC0D2FE0D4027C1552 /* PKAnimationsTests */,
 				A743A831E6A748C1AF101401 /* Pods.xcconfig */,
 				AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */,
+				4273FC4425E34C4296BDA3BC /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +243,14 @@
 				D8BEAF798727FD4448140ED8 /* PKScaleAnimationSpec.m */,
 			);
 			path = PKAnimationsTests;
+			sourceTree = "<group>";
+		};
+		D8BEAC359DBEDD6906D909D8 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				D8BEA5CE3429303C61D72530 /* rectangle.png */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 		D8BEAC54034D72066032A8CE /* animation */ = {
@@ -195,6 +282,8 @@
 				D8BEA47C42CE0A4DD5600F42 /* UIKit.framework */,
 				B3C4C3272F9C47C687CED354 /* libPods.a */,
 				E1C9D50E9EA246C6A6134604 /* libPods-PKAnimationsTests.a */,
+				1CEAEDF2175B6D6F00C898CE /* CoreGraphics.framework */,
+				370BA1545C9C4B8F86944B0A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,6 +310,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1CEAEDEE175B6D6E00C898CE /* PKAnimationsExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CEAEE11175B6D6F00C898CE /* Build configuration list for PBXNativeTarget "PKAnimationsExample" */;
+			buildPhases = (
+				36078B19D41E40BAA8D0CB97 /* Check Pods Manifest.lock */,
+				1CEAEDEB175B6D6E00C898CE /* Sources */,
+				1CEAEDEC175B6D6E00C898CE /* Frameworks */,
+				1CEAEDED175B6D6E00C898CE /* Resources */,
+				70A8B7423C874035A5744097 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKAnimationsExample;
+			productName = PKAnimationsExample;
+			productReference = 1CEAEDEF175B6D6E00C898CE /* PKAnimationsExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D8BEA794BD03D8AFF49A161C /* PKAnimations */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8BEAD11FCC83516B95D9E14 /* Build configuration list for PBXNativeTarget "PKAnimations" */;
@@ -281,6 +389,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				1CEAEDEE175B6D6E00C898CE /* PKAnimationsExample */,
 				D8BEA794BD03D8AFF49A161C /* PKAnimations */,
 				D8BEA8B6D06C6C1E638DD6CB /* PKAnimationsTests */,
 			);
@@ -288,6 +397,19 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1CEAEDED175B6D6E00C898CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CEAEDF9175B6D6F00C898CE /* InfoPlist.strings in Resources */,
+				1CEAEE01175B6D6F00C898CE /* Default.png in Resources */,
+				1CEAEE03175B6D6F00C898CE /* Default@2x.png in Resources */,
+				1CEAEE05175B6D6F00C898CE /* Default-568h@2x.png in Resources */,
+				1CEAEE0B175B6D6F00C898CE /* ViewController.xib in Resources */,
+				D8BEAA0CCC5D0670BAC752E7 /* rectangle.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8BEA94AB45E0263C6C8D589 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,6 +421,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		36078B19D41E40BAA8D0CB97 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+		70A8B7423C874035A5744097 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		871A764899154895A83637F1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +521,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1CEAEDEB175B6D6E00C898CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C53C6C4175B714C001E763D /* PKEase.h in Sources */,
+				1CEAEDFB175B6D6F00C898CE /* main.m in Sources */,
+				1CEAEDFF175B6D6F00C898CE /* AppDelegate.m in Sources */,
+				1CEAEE08175B6D6F00C898CE /* ViewController.m in Sources */,
+				D8BEA903FBAB4692B219CC09 /* PKEaseLinear.m in Sources */,
+				D8BEA87A22DA46BDF94F2DB9 /* PKScaleAnimation.m in Sources */,
+				D8BEA7F416CA231638C405C0 /* PKMoveAnimation.m in Sources */,
+				D8BEA158158349910934CAE0 /* PKFadeAnimation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8BEA388B401627DE79E67AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +574,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1CEAEDF7175B6D6F00C898CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CEAEDF8175B6D6F00C898CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1CEAEE09175B6D6F00C898CE /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CEAEE0A175B6D6F00C898CE /* ViewController.xib */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
 		D8BEA9BE4FB6A9AD7402BFC2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -420,6 +601,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1CEAEE0F175B6D6F00C898CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4273FC4425E34C4296BDA3BC /* Pods.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKAnimationsExample/PKAnimationsExample-Prefix.pch";
+				INFOPLIST_FILE = "PKAnimationsExample/PKAnimationsExample-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1CEAEE10175B6D6F00C898CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4273FC4425E34C4296BDA3BC /* Pods.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKAnimationsExample/PKAnimationsExample-Prefix.pch";
+				INFOPLIST_FILE = "PKAnimationsExample/PKAnimationsExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
 		D8BEA43B14A5574266555320 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD4216C76DB8429891DE93D6 /* Pods-PKAnimationsTests.xcconfig */;
@@ -536,6 +748,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1CEAEE11175B6D6F00C898CE /* Build configuration list for PBXNativeTarget "PKAnimationsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CEAEE0F175B6D6F00C898CE /* Release */,
+				1CEAEE10175B6D6F00C898CE /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D8BEA17C12EFDB405D827962 /* Build configuration list for PBXNativeTarget "PKAnimationsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

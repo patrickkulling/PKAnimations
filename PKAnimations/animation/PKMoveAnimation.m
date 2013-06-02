@@ -111,7 +111,7 @@ static const CGFloat FPS = 30.0f;
 }
 
 - (CAAnimation *)createAnimation {
-	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation"];
 	animation.delegate = self;
 	animation.fillMode = kCAFillModeForwards;
 	animation.removedOnCompletion = NO;
@@ -131,8 +131,8 @@ static const CGFloat FPS = 30.0f;
 		CGFloat xValue = [self.ease getValue: i startValue: 0 changeByValue: self.by.x duration: frames];
 		CGFloat yValue = [self.ease getValue: i startValue: 0 changeByValue: self.by.y duration: frames];
 
-		CATransform3D transform = CATransform3DMakeTranslation(xValue, yValue, 0.0);
-		[transforms addObject:[NSValue valueWithCATransform3D:transform]];
+		CGPoint point = CGPointMake(xValue, yValue);
+		[transforms addObject:[NSValue valueWithCGPoint: point]];
 	}
 
 	return transforms;

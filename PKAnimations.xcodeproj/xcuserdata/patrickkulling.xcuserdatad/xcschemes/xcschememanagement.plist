@@ -9,14 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>PKAnimationsTests.xcscheme</key>
+		<key>PKAnimationsExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>PKAnimationsTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1CEAEDEE175B6D6E00C898CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D8BEA794BD03D8AFF49A161C</key>
 		<dict>
 			<key>primary</key>
