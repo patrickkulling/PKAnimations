@@ -28,9 +28,6 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 #import "PKEase.h"
 
 
-@interface PKEaseBounce : NSObject
-@end
-
 @interface PKEaseBounceIn : NSObject <PKEase>
 -(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
 @end

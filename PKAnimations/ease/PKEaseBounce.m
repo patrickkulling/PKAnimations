@@ -27,10 +27,6 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 #import "PKEaseBounce.h"
 
 
-@implementation PKEaseBounce {
-}
-@end
-
 @implementation PKEaseBounceIn {
 }
 

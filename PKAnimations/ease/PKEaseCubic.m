@@ -24,38 +24,35 @@ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWE
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "PKEaseBack.h"
+#import "PKEaseCubic.h"
 
-static const float overShoot = 1.70158;
 
-@implementation PKEaseBackIn {
+@implementation PKEaseCubicIn {
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * (currentTime /= duration) * currentTime * ((overShoot + 1) * currentTime - overShoot) + startValue;
+    return changeByValue * (currentTime /= duration) * currentTime * currentTime + startValue;
 }
 
 @end
 
-@implementation PKEaseBackOut {
+@implementation PKEaseCubicOut {
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * ((currentTime = currentTime / duration - 1) * currentTime * ((overShoot + 1) * currentTime + overShoot) + 1) + startValue;
+    return changeByValue * ((currentTime = currentTime / duration - 1) * currentTime * currentTime + 1) + startValue;
 }
 
 @end
 
-@implementation PKEaseBackInOut {
+@implementation PKEaseCubicInOut {
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    float mutableOverShoot = overShoot;
-
     if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * (currentTime * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime - mutableOverShoot)) + startValue;
+        return changeByValue / 2 * currentTime * currentTime * currentTime + startValue;
 
-    return changeByValue / 2 * ((currentTime -= 2) * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime + mutableOverShoot) + 2) + startValue;
+    return changeByValue / 2 * ((currentTime -= 2) * currentTime * currentTime + 2) + startValue;
 }
 
 @end

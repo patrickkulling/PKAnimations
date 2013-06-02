@@ -24,38 +24,17 @@ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWE
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "PKEaseBack.h"
+#import <Foundation/Foundation.h>
+#import "PKEase.h"
 
-static const float overShoot = 1.70158;
-
-@implementation PKEaseBackIn {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * (currentTime /= duration) * currentTime * ((overShoot + 1) * currentTime - overShoot) + startValue;
-}
-
+@interface PKEaseElasticIn : NSObject <PKEase>
+-(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
 @end
 
-@implementation PKEaseBackOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * ((currentTime = currentTime / duration - 1) * currentTime * ((overShoot + 1) * currentTime + overShoot) + 1) + startValue;
-}
-
+@interface PKEaseElasticOut : NSObject <PKEase>
+-(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
 @end
 
-@implementation PKEaseBackInOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    float mutableOverShoot = overShoot;
-
-    if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * (currentTime * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime - mutableOverShoot)) + startValue;
-
-    return changeByValue / 2 * ((currentTime -= 2) * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime + mutableOverShoot) + 2) + startValue;
-}
-
+@interface PKEaseElasticInOut : NSObject <PKEase>
+-(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
 @end

@@ -20,6 +20,7 @@
  * THE SOFTWARE.
  */
 
+#import <Foundation/Foundation.h>
 
 @protocol PKEase <NSObject>
 -(CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration:(CGFloat)duration;
