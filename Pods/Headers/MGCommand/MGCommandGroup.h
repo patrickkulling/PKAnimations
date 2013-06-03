@@ -1,1 +1,0 @@
-../../MGCommand/MGCommand/Classes/MGCommandGroup.h
