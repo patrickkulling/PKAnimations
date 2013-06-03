@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1CEAEDEE175B6D6E00C898CE"
+               BuildableName = "PKAnimationsExample.app"
+               BlueprintName = "PKAnimationsExample"
+               ReferencedContainer = "container:PKAnimations.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1CEAEDEE175B6D6E00C898CE"
+            BuildableName = "PKAnimationsExample.app"
+            BlueprintName = "PKAnimationsExample"
+            ReferencedContainer = "container:PKAnimations.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>
