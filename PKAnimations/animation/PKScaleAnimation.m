@@ -115,7 +115,9 @@ static const CGFloat FPS = 30.0f;
 
     [self.view.layer removeAnimationForKey: self.animationKey];
 
-    self.completeHandler();
+    if(self.completeHandler != nil) {
+        self.completeHandler();
+    }
 }
 
 - (NSString *)createAnimationKey {
