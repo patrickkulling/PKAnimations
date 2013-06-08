@@ -79,6 +79,15 @@ static const CGFloat FPS = 30.0f;
 }
 
 - (void)execute {
+    float delay = [self.options.delay floatValue];
+
+    if(delay > 0.0f)
+        [self performSelector: @selector(animate) withObject: nil afterDelay: delay];
+    else
+        [self animate];
+}
+
+-(void) animate {
     if([self completesImmediatly])
         [self scaleImmediatly];
     else

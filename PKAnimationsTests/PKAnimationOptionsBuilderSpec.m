@@ -42,6 +42,7 @@ SPEC_BEGIN(PKAnimationOptionsBuilderSpec)
                         PKAnimationOptions *options = [builder build: @{}];
 
                         [[(id) options.ease should] beMemberOfClass: [PKEaseLinear class]];
+                        [[options.delay should] equal: [NSNumber numberWithFloat: 0.0f]];
                     });
                 });
 
@@ -74,6 +75,14 @@ SPEC_BEGIN(PKAnimationOptionsBuilderSpec)
 
                             }) should] raiseWithName: @"Protocol mismatch"];
                         });
+                    });
+                });
+
+                context(@"when arguments contain 'delay'", ^{
+                    it(@"will return an instance of PKAnimationOptions with defined delay", ^{
+                        PKAnimationOptions *options = [builder build: @{@"delay": [NSNumber numberWithFloat: 1.3f]}];
+
+                        [[options.delay should] equal: [NSNumber numberWithFloat: 1.3f]];
                     });
                 });
 

@@ -27,4 +27,5 @@
 
 @interface PKAnimationOptions : NSObject
 @property(nonatomic, strong) id<PKEase> ease;
+@property(nonatomic) NSNumber *delay;
 @end

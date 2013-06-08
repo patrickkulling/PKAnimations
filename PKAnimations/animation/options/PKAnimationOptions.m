@@ -29,9 +29,15 @@
 - (id)init {
     if (self = [super init]) {
         self.ease = [[PKEaseLinear alloc] init];
+        self.delay = [NSNumber numberWithFloat: 0.0f];
     }
 
     return self;
+}
+
+- (void)dealloc {
+    self.ease = nil;
+    self.delay = nil;
 }
 
 @end

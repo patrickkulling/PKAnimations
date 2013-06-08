@@ -27,6 +27,8 @@
 #import "PKEaseLinear.h"
 #import "PKScaleAnimation.h"
 #import "PKFadeAnimation.h"
+#import "PKEaseBack.h"
+#import "PKEaseQuadratic.h"
 
 @interface ViewController ()
 
@@ -55,7 +57,7 @@
     [sequence addCommand: [[PKMoveAnimation alloc] initWithView: self.rectangle
                                                        duration: 1.0f
                                                              by: CGPointMake(0.0f, 100.0f)
-                                                           ease: [[PKEaseLinear alloc] init]]];
+                                                        options: @{@"ease" : [[PKEaseQuadraticInOut alloc] init], @"delay" : [NSNumber numberWithFloat: 1.3f]}]];
 
     [sequence addCommand: [[PKScaleAnimation alloc] initWithView: self.rectangle
                                                         duration: 1.3
@@ -67,12 +69,13 @@
 
     [sequence addCommand: [[PKFadeAnimation alloc] initWithView: self.rectangle
                                                        duration: 0.3
-                                                           from: 0.2f to: 1.0f]];
+                                                           from: 0.2f to: 1.0f
+                                                        options: @{@"delay" : [NSNumber numberWithFloat: 1.3f]}]];
 
     [sequence addCommand: [[PKMoveAnimation alloc] initWithView: self.rectangle
                                                        duration: 1.0f
                                                              by: CGPointMake(0.0f, -100.0f)
-                                                           ease: [[PKEaseLinear alloc] init]]];
+                                                        options: @{@"ease" : [[PKEaseBackOut alloc] init]}]];
 
     [sequence addCommand: [[PKScaleAnimation alloc] initWithView: self.rectangle
                                                         duration: 0.8

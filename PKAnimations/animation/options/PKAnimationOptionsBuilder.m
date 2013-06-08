@@ -26,6 +26,7 @@
 
 @interface PKAnimationOptionsBuilder ()
 @property(nonatomic, strong) NSDictionary *allowedProtocols;
+@property(nonatomic, strong) NSDictionary *allowedClasses;
 @end
 
 @implementation PKAnimationOptionsBuilder {
@@ -34,9 +35,15 @@
 - (id)init {
     if (self = [super init]) {
         self.allowedProtocols = @{@"ease" : @protocol(PKEase)};
+        self.allowedClasses = @{@"delay" : [NSNumber class]};
     }
 
     return self;
+}
+
+- (void)dealloc {
+    self.allowedProtocols = nil;
+    self.allowedClasses = nil;
 }
 
 - (PKAnimationOptions *)build: (NSDictionary *)arguments {
@@ -57,12 +64,17 @@
 
 - (void)validate: (NSString *)key value: (id)value{
     Protocol *expectedProtocol = [self.allowedProtocols valueForKey: key];
+    Class allowedClass = [self.allowedClasses valueForKey: key];
 
-    if (expectedProtocol == nil) {
+    if (expectedProtocol == nil && allowedClass == nil) {
         [NSException raise: @"Invalid key" format: @"Key: %@ is not expected.", key];
     }
 
-    if (![value conformsToProtocol: expectedProtocol]) {
+    if (allowedClass && ![value isKindOfClass: allowedClass]) {
+        [NSException raise: @"Class mismatch" format: @"Value: %@ for key: %@ does not match expected class: %@.", value, key, allowedClass];
+    }
+
+    if (expectedProtocol && ![value conformsToProtocol: expectedProtocol]) {
         [NSException raise: @"Protocol mismatch" format: @"Value: %@ for key: %@ does not match expected protocol: %@.", value, key, expectedProtocol];
     }
 }
