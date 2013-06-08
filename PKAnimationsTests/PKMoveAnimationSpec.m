@@ -108,15 +108,33 @@ SPEC_BEGIN(PKMoveAnimationSpec)
 				});
 
 				context(@"when duration is 0.0f", ^{
-					it(@"will move the view immediatly", ^{
-						PKMoveAnimation *animation = [[PKMoveAnimation alloc] initWithView: view
-																				  duration: 0.0f
-																						by: moveBy];
+                    __block PKMoveAnimation *animation;
 
+                    beforeEach(^{
+                        animation = [[PKMoveAnimation alloc] initWithView: view
+                                                                 duration: 0.0f
+                                                                       by: moveBy];
+                    });
+
+					it(@"will move the view immediatly", ^{
 						[animation execute];
 
 						[[theValue(view.frame.origin) should] equal: theValue(moveBy)];
 					});
+
+                    context(@"with completeHandler", ^{
+                        it(@"will call the completeHandler immediatly", ^{
+                            __block NSInteger callbackCount = 0;
+
+                            animation.completeHandler = ^() {
+                                callbackCount++;
+                            };
+
+                            [animation execute];
+
+                            [[theValue(callbackCount) should] equal: theValue(1)];
+                        });
+                    });
 				});
 
 				context(@"when duration is > 1.0f", ^{

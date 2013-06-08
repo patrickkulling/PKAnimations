@@ -111,16 +111,34 @@
                     });
 
                     context(@"when duration is 0.0f", ^{
-                        it(@"will scale the view immediatly", ^{
-                            PKScaleAnimation *animation = [[PKScaleAnimation alloc] initWithView: view
-                                                                                        duration: 0.0f
-                                                                                            from: 0.0
-                                                                                              to: scaleTo];
+                        __block PKScaleAnimation *animation;
 
+                        beforeEach(^{
+                            animation = [[PKScaleAnimation alloc] initWithView: view
+                                                                      duration: 0.0f
+                                                                          from: 0.0
+                                                                            to: scaleTo];
+                        });
+
+                        it(@"will scale the view immediatly", ^{
                             [animation execute];
 
                             CGAffineTransform scaled = CGAffineTransformScale(CGAffineTransformIdentity, scaleTo, scaleTo);
                             [[theValue(view.transform) should] equal: theValue(scaled)];
+                        });
+
+                        context(@"with completeHandler", ^{
+                            it(@"will call the completeHandler immediatly", ^{
+                                __block NSInteger callbackCount = 0;
+
+                                animation.completeHandler = ^() {
+                                    callbackCount++;
+                                };
+
+                                [animation execute];
+
+                                [[theValue(callbackCount) should] equal: theValue(1)];
+                            });
                         });
                     });
 

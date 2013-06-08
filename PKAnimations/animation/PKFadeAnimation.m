@@ -87,10 +87,13 @@ static const CGFloat FPS = 30.0f;
 }
 
 -(void) animate {
-    if([self completesImmediatly])
+    if([self completesImmediatly]) {
         [self fadeImmediatly];
-    else
+        [self complete];
+    }
+    else {
         [self startAnimation];
+    }
 }
 
 - (BOOL)completesImmediatly {
@@ -99,6 +102,12 @@ static const CGFloat FPS = 30.0f;
 
 - (void)fadeImmediatly {
     self.view.alpha = self.to;
+}
+
+- (void)complete {
+    if(self.completeHandler != nil) {
+        self.completeHandler();
+    }
 }
 
 - (void)startAnimation {
@@ -112,10 +121,7 @@ static const CGFloat FPS = 30.0f;
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
     [self fadeImmediatly];
     [self.view.layer removeAnimationForKey: self.animationKey];
-
-    if(self.completeHandler != nil) {
-        self.completeHandler();
-    }
+    [self complete];
 }
 
 - (NSString *)createAnimationKey {

@@ -88,10 +88,13 @@ static const CGFloat FPS = 30.0f;
 }
 
 -(void) animate {
-    if([self completesImmediatly])
+    if([self completesImmediatly]) {
         [self scaleImmediatly];
-    else
+        [self complete];
+    }
+    else {
         [self startAnimation];
+    }
 }
 
 - (BOOL)completesImmediatly {
@@ -100,6 +103,12 @@ static const CGFloat FPS = 30.0f;
 
 - (void)scaleImmediatly {
     self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.to, self.to);
+}
+
+- (void)complete {
+    if(self.completeHandler != nil) {
+        self.completeHandler();
+    }
 }
 
 - (void)startAnimation {
@@ -114,10 +123,7 @@ static const CGFloat FPS = 30.0f;
     [self scaleImmediatly];
 
     [self.view.layer removeAnimationForKey: self.animationKey];
-
-    if(self.completeHandler != nil) {
-        self.completeHandler();
-    }
+    [self complete];
 }
 
 - (NSString *)createAnimationKey {

@@ -85,10 +85,13 @@ static const CGFloat FPS = 30.0f;
 }
 
 -(void) animate {
-    if([self completesImmediatly])
+    if([self completesImmediatly]) {
         [self moveImmediatly];
-    else
+        [self complete];
+    }
+    else {
         [self startAnimation];
+    }
 }
 
 - (BOOL)completesImmediatly {
@@ -104,6 +107,12 @@ static const CGFloat FPS = 30.0f;
 	self.view.frame = CGRectMake(newPoint.x, newPoint.y, size.width, size.height);
 }
 
+- (void)complete {
+    if(self.completeHandler != nil) {
+        self.completeHandler();
+    }
+}
+
 - (void)startAnimation {
 	[self.view.layer addAnimation: self.animation forKey: self.animationKey];
 }
@@ -116,10 +125,7 @@ static const CGFloat FPS = 30.0f;
 	self.view.frame = newLayer.frame;
 
 	[self.view.layer removeAnimationForKey: self.animationKey];
-
-    if(self.completeHandler != nil) {
-        self.completeHandler();
-    }
+    [self complete];
 }
 
 - (NSString *)createAnimationKey {

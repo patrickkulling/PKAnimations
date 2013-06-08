@@ -111,15 +111,33 @@ SPEC_BEGIN(PKFadeAnimationSpec)
                 });
 
                 context(@"when duration is 0.0f", ^{
-                    it(@"will fade the view immediatly", ^{
-                        PKFadeAnimation *animation = [[PKFadeAnimation alloc] initWithView: view
-                                                                                  duration: 0.0f
-                                                                                      from: 0.0
-                                                                                        to: fadeTo];
+                    __block PKFadeAnimation *animation;
 
+                    beforeEach(^{
+                        animation = [[PKFadeAnimation alloc] initWithView: view
+                                                                 duration: 0.0f
+                                                                     from: 0.0
+                                                                       to: fadeTo];
+                    });
+
+                    it(@"will fade the view immediatly", ^{
                         [animation execute];
 
                         [[theValue(view.alpha) should] equal: theValue(fadeTo)];
+                    });
+
+                    context(@"with completeHandler", ^{
+                        it(@"will call the completeHandler immediatly", ^{
+                            __block NSInteger callbackCount = 0;
+
+                            animation.completeHandler = ^() {
+                                callbackCount++;
+                            };
+
+                            [animation execute];
+
+                            [[theValue(callbackCount) should] equal: theValue(1)];
+                        });
                     });
                 });
 
