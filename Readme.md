@@ -59,6 +59,7 @@ All easing equations need to conform to the given `PKEase` protocol:
 * [NEW] Add new optional parameter 'options' to Move, Scale & FadeAnimation
 * [NEW] Add 'delay' support
 * [INFO] Add 'ease' as optional parameter support
+* [FIX] Single animations can now be executed without wrapping them into a MGCommandGroup
 
 **0.1.0** (06-03-2013)
 
