@@ -25,7 +25,16 @@ Creating a new Animation is as easy as pie:
 [[[PKMoveAnimation alloc] initWithView: self.view
                               duration: 1.0f
                                     by: CGPointMake(0.0f, 100.0f)
-                                  ease: [[PKEaseBounceOut alloc] init]] execute];
+                               options: @{@"ease": [[PKEaseBounceOut alloc] init]}] execute];
+```
+
+If you want to delay the animation, you can specify the delay inside the 'options' NSDictionary:
+
+```obj-c
+[[[PKMoveAnimation alloc] initWithView: self.view
+                              duration: 1.0f
+                                    by: CGPointMake(0.0f, 100.0f)
+                               options: @{@"delay": [NSNumber numberWithFloat: 1.3f]}] execute];
 ```
 
 For a basic usage, please take a look inside the included `PKAnimationsExample` project.
@@ -45,6 +54,12 @@ All easing equations need to conform to the given `PKEase` protocol:
 ```
 
 ## Changelog
+**0.1.1** (06-08-2013)
+
+* [NEW] Add new optional parameter 'options' to Move, Scale & FadeAnimation
+* [NEW] Add 'delay' support
+* [INFO] Add 'ease' as optional parameter support
+
 **0.1.0** (06-03-2013)
 
 * [NEW] Add default easing equations
