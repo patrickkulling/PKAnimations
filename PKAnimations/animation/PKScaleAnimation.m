@@ -24,6 +24,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PKScaleAnimation.h"
 #import "PKEaseLinear.h"
+#import "PKAnimationOptionsBuilder.h"
+#import "PKAnimationOptions.h"
 
 static const NSString *kGZAnimationKeyPrefix = @"PKScaleAnimation";
 static const CGFloat FPS = 30.0f;
@@ -33,30 +35,34 @@ static const CGFloat FPS = 30.0f;
 @property(nonatomic) float duration;
 @property(nonatomic) float from;
 @property(nonatomic) float to;
-@property(nonatomic, strong) id<PKEase> ease;
 @property(nonatomic, strong) NSString *animationKey;
 @property(nonatomic, strong) CAAnimation *animation;
+@property(nonatomic, strong) PKAnimationOptions *options;
 @end
 
 @implementation PKScaleAnimation {
 }
 
 - (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to {
-    self = [self initWithView: view duration: duration from: from to: to ease: [[PKEaseLinear alloc] init]];
+    self = [self initWithView: view duration: duration from: from to: to options: @{}];
     return self;
 }
 
 - (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to ease: (id <PKEase>)ease {
+    self = [self initWithView: view duration: duration from: from to: to options: @{@"ease" : ease}];
+    return self;
+}
+
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to options: (NSDictionary *)options {
     if(self = [super init])
     {
         NSAssert(view, @"view is nil!");
-        NSAssert(ease, @"ease is nil! Use initWithView:duration:by:ease: instead");
 
         self.view = view;
         self.duration = duration;
         self.from = from;
         self.to = to;
-        self.ease = ease;
+        self.options = [[[PKAnimationOptionsBuilder alloc] init] build: options];
 
         self.animationKey = [self createAnimationKey];
         self.animation = [self createAnimation];
@@ -65,10 +71,11 @@ static const CGFloat FPS = 30.0f;
     return self;
 }
 
+
 - (void)dealloc {
     self.animationKey = nil;
     self.animation = nil;
-    self.ease = nil;
+    self.options = nil;
 }
 
 - (void)execute {
@@ -126,7 +133,7 @@ static const CGFloat FPS = 30.0f;
 
     for(NSUInteger i = 0; i < frames; i++)
     {
-        CGFloat value = [self.ease getValue: i startValue: self.from changeByValue: by duration: frames];
+        CGFloat value = [self.options.ease getValue: i startValue: self.from changeByValue: by duration: frames];
 
         [transforms addObject:[NSNumber numberWithFloat: value]];
     }

@@ -25,10 +25,15 @@
 #import "MGAsyncCommand.h"
 #import "PKEase.h"
 
+@class PKAnimationOptions;
+
 @interface PKFadeAnimation : NSObject <MGAsyncCommand>
-@property (nonatomic, copy) MGCommandCompleteHandler completeHandler;
+@property(nonatomic, copy) MGCommandCompleteHandler completeHandler;
 
 - (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to;
-- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to ease:(id<PKEase>) ease;
+
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to ease: (id <PKEase>)ease;
+
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to options: (NSDictionary *)options;
 
 @end

@@ -31,4 +31,7 @@
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by;
 
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease;
+
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by options: (NSDictionary *)options;
+
 @end

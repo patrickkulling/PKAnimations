@@ -25,6 +25,8 @@
 #import <UIKit/UIKit.h>
 #import "PKMoveAnimation.h"
 #import "PKEaseLinear.h"
+#import "PKAnimationOptions.h"
+#import "PKAnimationOptionsBuilder.h"
 
 static const NSString *kGZAnimationKeyPrefix = @"PKMoveAnimation";
 static const CGFloat FPS = 30.0f;
@@ -33,7 +35,7 @@ static const CGFloat FPS = 30.0f;
 @property(nonatomic, weak) UIView *view;
 @property(nonatomic) float duration;
 @property(nonatomic) CGPoint by;
-@property(nonatomic, strong) id<PKEase> ease;
+@property(nonatomic, strong) PKAnimationOptions *options;
 @property(nonatomic, strong) NSString *animationKey;
 @property(nonatomic, strong) CAAnimation *animation;
 @end
@@ -42,32 +44,35 @@ static const CGFloat FPS = 30.0f;
 }
 
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by {
- 	self = [self initWithView: view duration: duration by: by ease: [[PKEaseLinear alloc] init]];
-	return self;
+    self = [self initWithView: view duration: duration by: by options: @{}];
+    return self;
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease {
-	if(self = [super init])
-	{
-		NSAssert(view, @"view is nil!");
-		NSAssert(ease, @"ease is nil! Use initWithView:duration:by:ease: instead");
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease: (id <PKEase>)ease {
+    self = [self initWithView: view duration: duration by: by options: @{@"ease" : ease}];
+    return self;
+}
 
-   		self.view = view;
-   		self.duration = duration;
-   		self.by = by;
-   		self.ease = ease;
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by options: (NSDictionary *)options {
+    if (self = [super init]) {
+        NSAssert(view, @"view is nil!");
 
-		self.animationKey = [self createAnimationKey];
-		self.animation = [self createAnimation];
-	}
+        self.view = view;
+        self.duration = duration;
+        self.by = by;
+        self.options = [[[PKAnimationOptionsBuilder alloc] init] build: options];
 
-	return self;
+        self.animationKey = [self createAnimationKey];
+        self.animation = [self createAnimation];
+    }
+
+    return self;
 }
 
 - (void)dealloc {
 	self.animationKey = nil;
 	self.animation = nil;
-	self.ease = nil;
+	self.options = nil;
 }
 
 - (void)execute {
@@ -128,8 +133,8 @@ static const CGFloat FPS = 30.0f;
 
 	for(NSUInteger i = 0; i < frames; i++)
 	{
-		CGFloat xValue = [self.ease getValue: i startValue: 0 changeByValue: self.by.x duration: frames];
-		CGFloat yValue = [self.ease getValue: i startValue: 0 changeByValue: self.by.y duration: frames];
+		CGFloat xValue = [self.options.ease getValue: i startValue: 0 changeByValue: self.by.x duration: frames];
+		CGFloat yValue = [self.options.ease getValue: i startValue: 0 changeByValue: self.by.y duration: frames];
 
 		CGPoint point = CGPointMake(xValue, yValue);
 		[transforms addObject:[NSValue valueWithCGPoint: point]];
