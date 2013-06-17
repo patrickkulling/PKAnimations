@@ -54,6 +54,11 @@ All easing equations need to conform to the given `PKEase` protocol:
 ```
 
 ## Changelog
+**0.1.2** (06-17-2013)
+
+* [NEW] Add PKAnimations.h header file to import all dependencies at once
+
+## Changelog
 **0.1.1** (06-08-2013)
 
 * [NEW] Add new optional parameter 'options' to Move, Scale & FadeAnimation
