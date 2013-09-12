@@ -62,11 +62,12 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
     }
     else
     {
-        s = self.period / (2 * M_PI) * asin(changeByValue / self.amplitude);
+        s = (float) (self.period / (2 * M_PI) * asin(changeByValue / self.amplitude));
     }
 
-    return -(self.amplitude * pow(2, 10 * (currentTime -= 1)) *
-            sin((currentTime * duration - s) * (2 * M_PI) / self.period)) + startValue;
+    currentTime -= 1;
+    return (CGFloat) (-(self.amplitude * pow(2, 10 * currentTime) *
+                sin((currentTime * duration - s) * (2 * M_PI) / self.period)) + startValue);
 }
 
 @end
@@ -106,11 +107,11 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
     }
     else
     {
-        s = self.period / (2 * M_PI) * asin(changeByValue / self.amplitude);
+        s = (float) (self.period / (2 * M_PI) * asin(changeByValue / self.amplitude));
     }
 
-    return self.amplitude * pow(2, -10 * currentTime) *
-            sin((currentTime * duration - s) * (2 * M_PI) / self.period) + changeByValue + startValue;
+    return (CGFloat) (self.amplitude * pow(2, -10 * currentTime) *
+                sin((currentTime * duration - s) * (2 * M_PI) / self.period) + changeByValue + startValue);
 }
 
 @end
@@ -150,16 +151,18 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
     }
     else
     {
-        s = self.period / (2 * M_PI) * asin(changeByValue / self.amplitude);
+        s = (float) (self.period / (2 * M_PI) * asin(changeByValue / self.amplitude));
     }
 
     if (currentTime < 1)
     {
-        return -0.5 * (self.amplitude * pow(2, 10 * (currentTime -= 1)) *
-                sin((currentTime * duration - s) * (2 * M_PI) /self.period)) + startValue;
+        currentTime -= 1;
+        return (CGFloat) (-0.5 * (self.amplitude * pow(2, 10 * currentTime) *
+                        sin((currentTime * duration - s) * (2 * M_PI) /self.period)) + startValue);
     }
 
-    return self.amplitude * pow(2, -10 * (currentTime -= 1)) *
-            sin((currentTime * duration - s) * (2 * M_PI) / self.period ) * 0.5 + changeByValue + startValue;
+    currentTime -= 1;
+    return (CGFloat) (self.amplitude * pow(2, -10 * currentTime) *
+                sin((currentTime * duration - s) * (2 * M_PI) / self.period ) * 0.5 + changeByValue + startValue);
 }
 @end

@@ -30,7 +30,8 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return -changeByValue * (sqrt(1 - (currentTime /= duration) * currentTime) - 1) + startValue;
+    currentTime /= duration;
+    return (CGFloat) (-changeByValue * (sqrt(1 - currentTime * currentTime) - 1) + startValue);
 }
 
 @end
@@ -39,7 +40,8 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * sqrt(1 - (currentTime = currentTime/duration - 1) * currentTime) + startValue;
+    currentTime = currentTime / duration - 1;
+    return (CGFloat) (changeByValue * sqrt(1 - currentTime * currentTime) + startValue);
 }
 
 @end
@@ -49,8 +51,9 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
     if ((currentTime /= duration / 2) < 1)
-        return -changeByValue / 2 * (sqrt(1 - currentTime * currentTime) - 1) + startValue;
+        return (CGFloat) (-changeByValue / 2 * (sqrt(1 - currentTime * currentTime) - 1) + startValue);
 
-    return changeByValue / 2 * (sqrt(1 - (currentTime -= 2) * currentTime) + 1) + startValue;
+    currentTime -= 2;
+    return (CGFloat) (changeByValue / 2 * (sqrt(1 - currentTime * currentTime) + 1) + startValue);
 }
 @end

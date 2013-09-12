@@ -32,7 +32,8 @@ static const float overShoot = 1.70158;
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * (currentTime /= duration) * currentTime * ((overShoot + 1) * currentTime - overShoot) + startValue;
+    currentTime /= duration;
+    return changeByValue * currentTime * currentTime * ((overShoot + 1) * currentTime - overShoot) + startValue;
 }
 
 @end
@@ -41,7 +42,8 @@ static const float overShoot = 1.70158;
 }
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * ((currentTime = currentTime / duration - 1) * currentTime * ((overShoot + 1) * currentTime + overShoot) + 1) + startValue;
+    currentTime = currentTime / duration - 1;
+    return changeByValue * (currentTime * currentTime * ((overShoot + 1) * currentTime + overShoot) + 1) + startValue;
 }
 
 @end
@@ -53,9 +55,14 @@ static const float overShoot = 1.70158;
     float mutableOverShoot = overShoot;
 
     if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * (currentTime * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime - mutableOverShoot)) + startValue;
+    {
+        mutableOverShoot *= 1.525;
+        return changeByValue / 2 * (currentTime * currentTime * ((mutableOverShoot + 1) * currentTime - mutableOverShoot)) + startValue;
+    }
 
-    return changeByValue / 2 * ((currentTime -= 2) * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime + mutableOverShoot) + 2) + startValue;
+    currentTime -= 2;
+    mutableOverShoot *= 1.525;
+    return changeByValue / 2 * (currentTime * currentTime * ((mutableOverShoot + 1) * currentTime + mutableOverShoot) + 2) + startValue;
 }
 
 @end

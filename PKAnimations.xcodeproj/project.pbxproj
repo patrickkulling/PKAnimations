@@ -765,6 +765,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4273FC4425E34C4296BDA3BC /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PKAnimationsExample/PKAnimationsExample-Prefix.pch";
@@ -781,6 +782,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4273FC4425E34C4296BDA3BC /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PKAnimationsExample/PKAnimationsExample-Prefix.pch";

@@ -46,15 +46,22 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
     if ((currentTime /= duration) < (1 / 2.75))
-        return  changeByValue * (7.5625 * currentTime * currentTime) + startValue;
+        return changeByValue * (7.5625 * currentTime * currentTime) + startValue;
 
     else if (currentTime < (2 / 2.75))
-        return  changeByValue * (7.5625 * (currentTime -= (1.5 / 2.75)) * currentTime + 0.75) + startValue;
+    {
+        currentTime -= (1.5 / 2.75);
+        return changeByValue * (7.5625 * currentTime * currentTime + 0.75) + startValue;
+    }
 
     else if (currentTime < (2.5 / 2.75))
-        return  changeByValue * (7.5625 * (currentTime -= (2.25 / 2.75)) * currentTime + 0.9375) + startValue;
+    {
+        currentTime -= (2.25 / 2.75);
+        return changeByValue * (7.5625 * currentTime * currentTime + 0.9375) + startValue;
+    }
 
-    return changeByValue * (7.5625 * (currentTime -= (2.625 / 2.75)) * currentTime + 0.984375) + startValue;
+    currentTime -= (2.625 / 2.75);
+    return changeByValue * (7.5625 * currentTime * currentTime + 0.984375) + startValue;
 }
 
 @end
@@ -64,13 +71,15 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 - (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
 
-    if (currentTime < duration / 2) {
+    if (currentTime < duration / 2)
+    {
         CGFloat easeIn = [[[PKEaseBounceIn alloc] init] getValue: 2 * currentTime
                                                       startValue: 0
                                                    changeByValue: changeByValue
                                                         duration: duration];
         return easeIn * 0.5 + startValue;
     }
+
     CGFloat easeOut = [[[PKEaseBounceOut alloc] init] getValue: 2 * currentTime - duration
                                                     startValue: 0
                                                  changeByValue: changeByValue
