@@ -35,9 +35,4 @@
     return self;
 }
 
-- (void)dealloc {
-    self.ease = nil;
-    self.delay = nil;
-}
-
 @end

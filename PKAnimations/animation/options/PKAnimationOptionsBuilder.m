@@ -41,11 +41,6 @@
     return self;
 }
 
-- (void)dealloc {
-    self.allowedProtocols = nil;
-    self.allowedClasses = nil;
-}
-
 - (PKAnimationOptions *)build: (NSDictionary *)arguments {
     PKAnimationOptions *options = [[PKAnimationOptions alloc] init];
 

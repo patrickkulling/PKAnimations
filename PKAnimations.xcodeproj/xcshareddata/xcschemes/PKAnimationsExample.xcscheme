@@ -76,6 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1CEAEDEE175B6D6E00C898CE"
+            BuildableName = "PKAnimationsExample.app"
+            BlueprintName = "PKAnimationsExample"
+            ReferencedContainer = "container:PKAnimations.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
