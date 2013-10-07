@@ -26,32 +26,41 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 #import "PKEaseQuartic.h"
 
-@implementation PKEaseQuarticIn {
+@implementation PKEaseQuarticIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * (currentTime /= duration) * currentTime * currentTime * currentTime + startValue;
-}
-
-@end
-
-@implementation PKEaseQuarticOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return -changeByValue * ((currentTime = currentTime / duration - 1) * currentTime * currentTime * currentTime - 1) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime /= duration;
+	return changeByValue * currentTime * currentTime * currentTime * currentTime + startValue;
 }
 
 @end
 
-@implementation PKEaseQuarticInOut {
+@implementation PKEaseQuarticOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * currentTime * currentTime * currentTime * currentTime + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime = currentTime / duration - 1;
+	return -changeByValue * (currentTime * currentTime * currentTime * currentTime - 1) + startValue;
+}
 
-    return -changeByValue / 2 * ((currentTime -= 2) * currentTime * currentTime * currentTime - 2) + startValue;
+@end
+
+@implementation PKEaseQuarticInOut
+{
+}
+
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if ((currentTime /= duration / 2) < 1)
+		return changeByValue / 2 * currentTime * currentTime * currentTime * currentTime + startValue;
+
+	currentTime -= 2;
+	return -changeByValue / 2 * (currentTime * currentTime * currentTime * currentTime - 2) + startValue;
 }
 
 @end

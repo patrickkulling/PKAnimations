@@ -27,55 +27,70 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 #import "PKEaseBounce.h"
 
 
-@implementation PKEaseBounceIn {
+@implementation PKEaseBounceIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    CGFloat easeOut = [[[PKEaseBounceOut alloc] init] getValue: duration - currentTime
-                                                    startValue: 0
-                                                 changeByValue: changeByValue
-                                                      duration: duration];
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	CGFloat easeOut = [[[PKEaseBounceOut alloc] init] getValue: duration - currentTime
+													startValue: 0
+												 changeByValue: changeByValue
+													  duration: duration];
 
-    return changeByValue - easeOut + startValue;
-}
-
-@end
-
-@implementation PKEaseBounceOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if ((currentTime /= duration) < (1 / 2.75))
-        return  changeByValue * (7.5625 * currentTime * currentTime) + startValue;
-
-    else if (currentTime < (2 / 2.75))
-        return  changeByValue * (7.5625 * (currentTime -= (1.5 / 2.75)) * currentTime + 0.75) + startValue;
-
-    else if (currentTime < (2.5 / 2.75))
-        return  changeByValue * (7.5625 * (currentTime -= (2.25 / 2.75)) * currentTime + 0.9375) + startValue;
-
-    return changeByValue * (7.5625 * (currentTime -= (2.625 / 2.75)) * currentTime + 0.984375) + startValue;
+	return changeByValue - easeOut + startValue;
 }
 
 @end
 
-@implementation PKEaseBounceInOut {
+@implementation PKEaseBounceOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if ((currentTime /= duration) < (1 / 2.75))
+	{
+		return changeByValue * (7.5625 * currentTime * currentTime) + startValue;
+	}
+	else if (currentTime < (2 / 2.75))
+	{
+		currentTime -= (1.5 / 2.75);
+		return changeByValue * (7.5625 * currentTime * currentTime + 0.75) + startValue;
+	}
 
-    if (currentTime < duration / 2) {
-        CGFloat easeIn = [[[PKEaseBounceIn alloc] init] getValue: 2 * currentTime
-                                                      startValue: 0
-                                                   changeByValue: changeByValue
-                                                        duration: duration];
-        return easeIn * 0.5 + startValue;
-    }
-    CGFloat easeOut = [[[PKEaseBounceOut alloc] init] getValue: 2 * currentTime - duration
-                                                    startValue: 0
-                                                 changeByValue: changeByValue
-                                                      duration: duration];
-    return easeOut * 0.5 + changeByValue * 0.5 + startValue;
+	else if (currentTime < (2.5 / 2.75))
+	{
+		currentTime -= (2.25 / 2.75);
+		return changeByValue * (7.5625 * currentTime * currentTime + 0.9375) + startValue;
+	}
+
+	currentTime -= (2.625 / 2.75);
+	return changeByValue * (7.5625 * currentTime * currentTime + 0.984375) + startValue;
+}
+
+@end
+
+@implementation PKEaseBounceInOut
+{
+}
+
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+
+	if (currentTime < duration / 2)
+	{
+		CGFloat easeIn = [[[PKEaseBounceIn alloc] init] getValue: 2 * currentTime
+													  startValue: 0
+												   changeByValue: changeByValue
+														duration: duration];
+		return easeIn * 0.5 + startValue;
+	}
+	CGFloat easeOut = [[[PKEaseBounceOut alloc] init] getValue: 2 * currentTime - duration
+													startValue: 0
+												 changeByValue: changeByValue
+													  duration: duration];
+	return easeOut * 0.5 + changeByValue * 0.5 + startValue;
 }
 
 @end

@@ -26,11 +26,11 @@
 #import "PKEase.h"
 
 @interface PKMoveAnimation : NSObject <MGAsyncCommand>
-@property (nonatomic, copy) MGCommandCompleteHandler completeHandler;
+@property(nonatomic, copy) MGCommandCompleteHandler completeHandler;
 
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by;
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease:(id<PKEase>) ease;
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease: (id <PKEase>)ease;
 
 - (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by options: (NSDictionary *)options;
 

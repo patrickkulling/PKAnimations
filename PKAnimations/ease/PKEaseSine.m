@@ -26,29 +26,35 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 #import "PKEaseSine.h"
 
-@implementation PKEaseSineIn {
+@implementation PKEaseSineIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return -changeByValue * cos(currentTime / duration * (M_PI / 2)) + changeByValue + startValue;
-}
-
-@end
-
-@implementation PKEaseSineOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * sin(currentTime / duration * (M_PI / 2)) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	return -changeByValue * cos(currentTime / duration * (M_PI / 2)) + changeByValue + startValue;
 }
 
 @end
 
-@implementation PKEaseSineInOut {
+@implementation PKEaseSineOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return -changeByValue / 2 * (cos(M_PI * currentTime / duration) - 1) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	return changeByValue * sin(currentTime / duration * (M_PI / 2)) + startValue;
+}
+
+@end
+
+@implementation PKEaseSineInOut
+{
+}
+
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	return -changeByValue / 2 * (cos(M_PI * currentTime / duration) - 1) + startValue;
 }
 
 @end

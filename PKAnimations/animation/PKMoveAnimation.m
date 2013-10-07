@@ -20,11 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import <QuartzCore/QuartzCore.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIKit.h>
 #import "PKMoveAnimation.h"
-#import "PKEaseLinear.h"
 #import "PKAnimationOptions.h"
 #import "PKAnimationOptionsBuilder.h"
 
@@ -40,59 +36,70 @@ static const CGFloat FPS = 30.0f;
 @property(nonatomic, strong) CAAnimation *animation;
 @end
 
-@implementation PKMoveAnimation {
+@implementation PKMoveAnimation
+{
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by {
-    self = [self initWithView: view duration: duration by: by options: @{}];
-    return self;
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by
+{
+	self = [self initWithView: view duration: duration by: by options: @{}];
+	return self;
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease: (id <PKEase>)ease {
-    self = [self initWithView: view duration: duration by: by options: @{@"ease" : ease}];
-    return self;
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by ease: (id <PKEase>)ease
+{
+	self = [self initWithView: view duration: duration by: by options: @{@"ease" : ease}];
+	return self;
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by options: (NSDictionary *)options {
-    if (self = [super init]) {
-        NSAssert(view, @"view is nil!");
+- (id)initWithView: (UIView *)view duration: (float)duration by: (CGPoint)by options: (NSDictionary *)options
+{
+	if (self = [super init])
+	{
+		NSAssert(view, @"view is nil!");
 
-        self.view = view;
-        self.duration = duration;
-        self.by = by;
-        self.options = [[[PKAnimationOptionsBuilder alloc] init] build: options];
+		self.view = view;
+		self.duration = duration;
+		self.by = by;
+		self.options = [[[PKAnimationOptionsBuilder alloc] init] build: options];
 
-        self.animationKey = [self createAnimationKey];
-        self.animation = [self createAnimation];
-    }
+		self.animationKey = [self createAnimationKey];
+		self.animation = [self createAnimation];
+	}
 
-    return self;
+	return self;
 }
 
-- (void)execute {
-    float delay = [self.options.delay floatValue];
+- (void)execute
+{
+	float delay = [self.options.delay floatValue];
 
-    if(delay > 0.0f)
-        [self performSelector: @selector(animate) withObject: nil afterDelay: delay];
-    else
-        [self animate];
+	if (delay > 0.0f)
+		[self performSelector: @selector(animate) withObject: nil afterDelay: delay];
+	else
+		[self animate];
 }
 
--(void) animate {
-    if([self completesImmediatly]) {
-        [self moveImmediatly];
-        [self complete];
-    }
-    else {
-        [self startAnimation];
-    }
+- (void)animate
+{
+	if ([self completesImmediatly])
+	{
+		[self moveImmediatly];
+		[self complete];
+	}
+	else
+	{
+		[self startAnimation];
+	}
 }
 
-- (BOOL)completesImmediatly {
+- (BOOL)completesImmediatly
+{
 	return self.duration == 0.0f;
 }
 
-- (void)moveImmediatly {
+- (void)moveImmediatly
+{
 	CGSize size = self.view.frame.size;
 	CGPoint newPoint = self.view.frame.origin;
 	newPoint.x += self.by.x;
@@ -101,35 +108,42 @@ static const CGFloat FPS = 30.0f;
 	self.view.frame = CGRectMake(newPoint.x, newPoint.y, size.width, size.height);
 }
 
-- (void)complete {
-    if(self.completeHandler != nil) {
-        self.completeHandler();
-    }
-    
-    self.animation = nil;
+- (void)complete
+{
+	if (self.completeHandler != nil)
+	{
+		self.completeHandler();
+	}
+
+	self.animation = nil;
 }
 
-- (void)startAnimation {
+- (void)startAnimation
+{
 	[self.view.layer addAnimation: self.animation forKey: self.animationKey];
 }
 
-- (void)animationDidStart:(CAAnimation *)theAnimation {
+- (void)animationDidStart: (CAAnimation *)theAnimation
+{
 }
 
-- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
-	CALayer *newLayer = (CALayer *)self.view.layer.presentationLayer;
+- (void)animationDidStop: (CAAnimation *)theAnimation finished: (BOOL)flag
+{
+	CALayer *newLayer = (CALayer *) self.view.layer.presentationLayer;
 	self.view.frame = newLayer.frame;
 
 	[self.view.layer removeAnimationForKey: self.animationKey];
-    [self complete];
+	[self complete];
 }
 
-- (NSString *)createAnimationKey {
+- (NSString *)createAnimationKey
+{
 	return [NSString stringWithFormat: @"%@_%f", kGZAnimationKeyPrefix, [[NSDate date] timeIntervalSince1970]];
 }
 
-- (CAAnimation *)createAnimation {
-	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation"];
+- (CAAnimation *)createAnimation
+{
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath: @"transform.translation"];
 	animation.delegate = self;
 	animation.fillMode = kCAFillModeForwards;
 	animation.removedOnCompletion = NO;
@@ -140,17 +154,18 @@ static const CGFloat FPS = 30.0f;
 	return animation;
 }
 
-- (NSMutableArray *)calculateValues {
+- (NSMutableArray *)calculateValues
+{
 	NSInteger frames = self.duration * FPS;
-	NSMutableArray* transforms = [NSMutableArray array];
+	NSMutableArray *transforms = [NSMutableArray array];
 
-	for(NSUInteger i = 0; i < frames; i++)
+	for (NSUInteger i = 0; i < frames; i++)
 	{
 		CGFloat xValue = [self.options.ease getValue: i startValue: 0 changeByValue: self.by.x duration: frames];
 		CGFloat yValue = [self.options.ease getValue: i startValue: 0 changeByValue: self.by.y duration: frames];
 
 		CGPoint point = CGPointMake(xValue, yValue);
-		[transforms addObject:[NSValue valueWithCGPoint: point]];
+		[transforms addObject: [NSValue valueWithCGPoint: point]];
 	}
 
 	return transforms;

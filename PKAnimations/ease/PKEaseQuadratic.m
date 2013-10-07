@@ -26,32 +26,41 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 #import "PKEaseQuadratic.h"
 
-@implementation PKEaseQuadraticIn {
+@implementation PKEaseQuadraticIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * (currentTime /= duration) * currentTime + startValue;
-}
-
-@end
-
-@implementation PKEaseQuadraticOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return -changeByValue * (currentTime /= duration) * (currentTime - 2) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime /= duration;
+	return changeByValue * currentTime * currentTime + startValue;
 }
 
 @end
 
-@implementation PKEaseQuadraticInOut {
+@implementation PKEaseQuadraticOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * currentTime * currentTime + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime /= duration;
+	return -changeByValue * currentTime * (currentTime - 2) + startValue;
+}
 
-    return -changeByValue / 2 * ((--currentTime) * (currentTime - 2) - 1) + startValue;
+@end
+
+@implementation PKEaseQuadraticInOut
+{
+}
+
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if ((currentTime /= duration / 2) < 1)
+		return changeByValue / 2 * currentTime * currentTime + startValue;
+
+	currentTime--;
+	return -changeByValue / 2 * (currentTime * (currentTime - 2) - 1) + startValue;
 }
 
 @end

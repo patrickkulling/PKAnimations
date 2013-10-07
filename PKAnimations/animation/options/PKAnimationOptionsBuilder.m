@@ -29,54 +29,67 @@
 @property(nonatomic, strong) NSDictionary *allowedClasses;
 @end
 
-@implementation PKAnimationOptionsBuilder {
+@implementation PKAnimationOptionsBuilder
+{
 }
 
-- (id)init {
-    if (self = [super init]) {
-        self.allowedProtocols = @{@"ease" : @protocol(PKEase)};
-        self.allowedClasses = @{@"delay" : [NSNumber class]};
-    }
+- (id)init
+{
+	if (self = [super init])
+	{
+		self.allowedProtocols = @{@"ease" : @protocol(PKEase)};
+		self.allowedClasses = @{@"delay" : [NSNumber class]};
+	}
 
-    return self;
+	return self;
 }
 
-- (void)dealloc {
-    self.allowedProtocols = nil;
-    self.allowedClasses = nil;
+- (void)dealloc
+{
+	self.allowedProtocols = nil;
+	self.allowedClasses = nil;
 }
 
-- (PKAnimationOptions *)build: (NSDictionary *)arguments {
-    PKAnimationOptions *options = [[PKAnimationOptions alloc] init];
+- (PKAnimationOptions *)build: (NSDictionary *)arguments
+{
+	PKAnimationOptions *options = [[PKAnimationOptions alloc] init];
 
-    for (NSString *key in arguments) {
-        [self apply: key value: [arguments valueForKey: key] to: options];
-    }
+	for (NSString *key in arguments)
+	{
+		[self apply: key value: [arguments valueForKey: key] to: options];
+	}
 
-    return options;
+	return options;
 }
 
-- (void)apply: (NSString *)key value: (id)value to: (PKAnimationOptions *)options {
-    [self validate: key value: value];
+- (void)apply: (NSString *)key value: (id)value to: (PKAnimationOptions *)options
+{
+	[self validate: key value: value];
 
-    [options setValue: value forKey: key];
+	[options setValue: value forKey: key];
 }
 
-- (void)validate: (NSString *)key value: (id)value{
-    Protocol *expectedProtocol = [self.allowedProtocols valueForKey: key];
-    Class allowedClass = [self.allowedClasses valueForKey: key];
+- (void)validate: (NSString *)key value: (id)value
+{
+	Protocol *expectedProtocol = [self.allowedProtocols valueForKey: key];
+	Class allowedClass = [self.allowedClasses valueForKey: key];
 
-    if (expectedProtocol == nil && allowedClass == nil) {
-        [NSException raise: @"Invalid key" format: @"Key: %@ is not expected.", key];
-    }
+	if (expectedProtocol == nil && allowedClass == nil)
+	{
+		[NSException raise: @"Invalid key" format: @"Key: %@ is not expected.", key];
+	}
 
-    if (allowedClass && ![value isKindOfClass: allowedClass]) {
-        [NSException raise: @"Class mismatch" format: @"Value: %@ for key: %@ does not match expected class: %@.", value, key, allowedClass];
-    }
+	if (allowedClass && ![value isKindOfClass: allowedClass])
+	{
+		[NSException raise: @"Class mismatch" format: @"Value: %@ for key: %@ does not match expected class: %@.",
+													  value, key, allowedClass];
+	}
 
-    if (expectedProtocol && ![value conformsToProtocol: expectedProtocol]) {
-        [NSException raise: @"Protocol mismatch" format: @"Value: %@ for key: %@ does not match expected protocol: %@.", value, key, expectedProtocol];
-    }
+	if (expectedProtocol && ![value conformsToProtocol: expectedProtocol])
+	{
+		[NSException raise: @"Protocol mismatch" format: @"Value: %@ for key: %@ does not match expected protocol: %@.",
+														 value, key, expectedProtocol];
+	}
 }
 
 @end

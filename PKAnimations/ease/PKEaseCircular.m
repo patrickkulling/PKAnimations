@@ -26,31 +26,40 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 #import "PKEaseCircular.h"
 
-@implementation PKEaseCircularIn {
+@implementation PKEaseCircularIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return -changeByValue * (sqrt(1 - (currentTime /= duration) * currentTime) - 1) + startValue;
-}
-
-@end
-
-@implementation PKEaseCircularOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * sqrt(1 - (currentTime = currentTime/duration - 1) * currentTime) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime /= duration;
+	return (CGFloat) (-changeByValue * (sqrt(1 - currentTime * currentTime) - 1) + startValue);
 }
 
 @end
 
-@implementation PKEaseCircularInOut {
+@implementation PKEaseCircularOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if ((currentTime /= duration / 2) < 1)
-        return -changeByValue / 2 * (sqrt(1 - currentTime * currentTime) - 1) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime = currentTime / duration - 1;
+	return (CGFloat) (changeByValue * sqrt(1 - currentTime * currentTime) + startValue);
+}
 
-    return changeByValue / 2 * (sqrt(1 - (currentTime -= 2) * currentTime) + 1) + startValue;
+@end
+
+@implementation PKEaseCircularInOut
+{
+}
+
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if ((currentTime /= duration / 2) < 1)
+		return (CGFloat) (-changeByValue / 2 * (sqrt(1 - currentTime * currentTime) - 1) + startValue);
+
+	currentTime -= 2;
+	return (CGFloat) (changeByValue / 2 * (sqrt(1 - currentTime * currentTime) + 1) + startValue);
 }
 @end

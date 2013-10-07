@@ -28,34 +28,44 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 static const float overShoot = 1.70158;
 
-@implementation PKEaseBackIn {
+@implementation PKEaseBackIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * (currentTime /= duration) * currentTime * ((overShoot + 1) * currentTime - overShoot) + startValue;
-}
-
-@end
-
-@implementation PKEaseBackOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return changeByValue * ((currentTime = currentTime / duration - 1) * currentTime * ((overShoot + 1) * currentTime + overShoot) + 1) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime /= duration;
+	return changeByValue * currentTime * currentTime * ((overShoot + 1) * currentTime - overShoot) + startValue;
 }
 
 @end
 
-@implementation PKEaseBackInOut {
+@implementation PKEaseBackOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    float mutableOverShoot = overShoot;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	currentTime = currentTime / duration - 1;
+	return changeByValue * (currentTime * currentTime * ((overShoot + 1) * currentTime + overShoot) + 1) + startValue;
+}
 
-    if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * (currentTime * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime - mutableOverShoot)) + startValue;
+@end
 
-    return changeByValue / 2 * ((currentTime -= 2) * currentTime * (((mutableOverShoot *= (1.525)) + 1) * currentTime + mutableOverShoot) + 2) + startValue;
+@implementation PKEaseBackInOut
+{
+}
+
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	float mutableOverShoot = overShoot;
+	mutableOverShoot *= (1.525);
+
+	if ((currentTime /= duration / 2) < 1)
+		return changeByValue / 2 * (currentTime * currentTime * ((mutableOverShoot + 1) * currentTime - mutableOverShoot)) + startValue;
+
+	currentTime -= 2;
+	return changeByValue / 2 * (currentTime * currentTime * ((mutableOverShoot + 1) * currentTime + mutableOverShoot) + 2) + startValue;
 }
 
 @end

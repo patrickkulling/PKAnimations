@@ -20,10 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
 #import "PKScaleAnimation.h"
-#import "PKEaseLinear.h"
 #import "PKAnimationOptionsBuilder.h"
 #import "PKAnimationOptions.h"
 
@@ -40,116 +37,134 @@ static const CGFloat FPS = 30.0f;
 @property(nonatomic, strong) PKAnimationOptions *options;
 @end
 
-@implementation PKScaleAnimation {
+@implementation PKScaleAnimation
+{
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to {
-    self = [self initWithView: view duration: duration from: from to: to options: @{}];
-    return self;
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to
+{
+	self = [self initWithView: view duration: duration from: from to: to options: @{}];
+	return self;
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to ease: (id <PKEase>)ease {
-    self = [self initWithView: view duration: duration from: from to: to options: @{@"ease" : ease}];
-    return self;
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to ease: (id <PKEase>)ease
+{
+	self = [self initWithView: view duration: duration from: from to: to options: @{@"ease" : ease}];
+	return self;
 }
 
-- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to options: (NSDictionary *)options {
-    if(self = [super init])
-    {
-        NSAssert(view, @"view is nil!");
+- (id)initWithView: (UIView *)view duration: (float)duration from: (float)from to: (float)to options: (NSDictionary *)options
+{
+	if (self = [super init])
+	{
+		NSAssert(view, @"view is nil!");
 
-        self.view = view;
-        self.duration = duration;
-        self.from = from;
-        self.to = to;
-        self.options = [[[PKAnimationOptionsBuilder alloc] init] build: options];
+		self.view = view;
+		self.duration = duration;
+		self.from = from;
+		self.to = to;
+		self.options = [[[PKAnimationOptionsBuilder alloc] init] build: options];
 
-        self.animationKey = [self createAnimationKey];
-        self.animation = [self createAnimation];
-    }
+		self.animationKey = [self createAnimationKey];
+		self.animation = [self createAnimation];
+	}
 
-    return self;
+	return self;
 }
 
-- (void)execute {
-    float delay = [self.options.delay floatValue];
+- (void)execute
+{
+	float delay = [self.options.delay floatValue];
 
-    if(delay > 0.0f)
-        [self performSelector: @selector(animate) withObject: nil afterDelay: delay];
-    else
-        [self animate];
+	if (delay > 0.0f)
+		[self performSelector: @selector(animate) withObject: nil afterDelay: delay];
+	else
+		[self animate];
 }
 
--(void) animate {
-    if([self completesImmediatly]) {
-        [self scaleImmediatly];
-        [self complete];
-    }
-    else {
-        [self startAnimation];
-    }
+- (void)animate
+{
+	if ([self completesImmediatly])
+	{
+		[self scaleImmediatly];
+		[self complete];
+	}
+	else
+	{
+		[self startAnimation];
+	}
 }
 
-- (BOOL)completesImmediatly {
-    return self.duration == 0.0f;
+- (BOOL)completesImmediatly
+{
+	return self.duration == 0.0f;
 }
 
-- (void)scaleImmediatly {
-    self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.to, self.to);
+- (void)scaleImmediatly
+{
+	self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.to, self.to);
 }
 
-- (void)complete {
-    if(self.completeHandler != nil) {
-        self.completeHandler();
-    }
-    
-    self.animation = nil;
+- (void)complete
+{
+	if (self.completeHandler != nil)
+	{
+		self.completeHandler();
+	}
+
+	self.animation = nil;
 }
 
-- (void)startAnimation {
-    self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.from, self.from);
-    [self.view.layer addAnimation: self.animation forKey: self.animationKey];
+- (void)startAnimation
+{
+	self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.from, self.from);
+	[self.view.layer addAnimation: self.animation forKey: self.animationKey];
 }
 
-- (void)animationDidStart:(CAAnimation *)theAnimation {
+- (void)animationDidStart: (CAAnimation *)theAnimation
+{
 }
 
-- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
-    [self scaleImmediatly];
+- (void)animationDidStop: (CAAnimation *)theAnimation finished: (BOOL)flag
+{
+	[self scaleImmediatly];
 
-    [self.view.layer removeAnimationForKey: self.animationKey];
-    [self complete];
+	[self.view.layer removeAnimationForKey: self.animationKey];
+	[self complete];
 }
 
-- (NSString *)createAnimationKey {
-    return [NSString stringWithFormat: @"%@_%f", kGZAnimationKeyPrefix, [[NSDate date] timeIntervalSince1970]];
+- (NSString *)createAnimationKey
+{
+	return [NSString stringWithFormat: @"%@_%f", kGZAnimationKeyPrefix, [[NSDate date] timeIntervalSince1970]];
 }
 
-- (CAAnimation *)createAnimation {
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    animation.delegate = self;
-    animation.fillMode = kCAFillModeForwards;
-    animation.removedOnCompletion = NO;
-    animation.repeatCount = 1;
-    animation.duration = self.duration;
-    animation.values = [self calculateValues];
+- (CAAnimation *)createAnimation
+{
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath: @"transform.scale"];
+	animation.delegate = self;
+	animation.fillMode = kCAFillModeForwards;
+	animation.removedOnCompletion = NO;
+	animation.repeatCount = 1;
+	animation.duration = self.duration;
+	animation.values = [self calculateValues];
 
-    return animation;
+	return animation;
 }
 
-- (NSMutableArray *)calculateValues {
-    NSInteger frames = self.duration * FPS;
-    float by = (self.to - self.from);
+- (NSMutableArray *)calculateValues
+{
+	NSInteger frames = self.duration * FPS;
+	float by = (self.to - self.from);
 
-    NSMutableArray* transforms = [NSMutableArray array];
+	NSMutableArray *transforms = [NSMutableArray array];
 
-    for(NSUInteger i = 0; i < frames; i++)
-    {
-        CGFloat value = [self.options.ease getValue: i startValue: self.from changeByValue: by duration: frames];
+	for (NSUInteger i = 0; i < frames; i++)
+	{
+		CGFloat value = [self.options.ease getValue: i startValue: self.from changeByValue: by duration: frames];
 
-        [transforms addObject:[NSNumber numberWithFloat: value]];
-    }
+		[transforms addObject: [NSNumber numberWithFloat: value]];
+	}
 
-    return transforms;
+	return transforms;
 }
 @end

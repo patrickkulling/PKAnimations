@@ -31,42 +31,47 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 @property(nonatomic) float period;
 @end
 
-@implementation PKEaseElasticIn {
+@implementation PKEaseElasticIn
+{
 }
 
-- (id)init {
-    if (self = [super init]) {
-        self.amplitude = 0.0f;
-        self.period = 0.0f;
-    }
+- (id)init
+{
+	if (self = [super init])
+	{
+		self.amplitude = 0.0f;
+		self.period = 0.0f;
+	}
 
-    return self;
+	return self;
 }
 
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if (currentTime == 0)
-        return startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if (currentTime == 0)
+		return startValue;
 
-    if ((currentTime /= duration) == 1)
-        return startValue + changeByValue;
+	if ((currentTime /= duration) == 1)
+		return startValue + changeByValue;
 
-    if (!self.period)
-        self.period = duration * 0.3;
+	if (!self.period)
+		self.period = duration * 0.3;
 
-    float s = 0;
-    if (!self.amplitude || self.amplitude < abs(changeByValue))
-    {
-        self.amplitude = changeByValue;
-        s = self.period / 4;
-    }
-    else
-    {
-        s = self.period / (2 * M_PI) * asin(changeByValue / self.amplitude);
-    }
+	CGFloat s = 0;
+	if (!self.amplitude || self.amplitude < abs(changeByValue))
+	{
+		self.amplitude = changeByValue;
+		s = self.period / 4;
+	}
+	else
+	{
+		s = (CGFloat) (self.period / (2 * M_PI) * asin(changeByValue / self.amplitude));
+	}
 
-    return -(self.amplitude * pow(2, 10 * (currentTime -= 1)) *
-            sin((currentTime * duration - s) * (2 * M_PI) / self.period)) + startValue;
+	currentTime -= 1;
+	return (CGFloat) (-(self.amplitude * pow(2, 10 * currentTime) *
+			sin((currentTime * duration - s) * (2 * M_PI) / self.period)) + startValue);
 }
 
 @end
@@ -76,41 +81,45 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 @property(nonatomic) float amplitude;
 @end
 
-@implementation PKEaseElasticOut {
+@implementation PKEaseElasticOut
+{
 }
 
-- (id)init {
-    if (self = [super init]) {
-        self.amplitude = 0.0f;
-        self.period = 0.0f;
-    }
+- (id)init
+{
+	if (self = [super init])
+	{
+		self.amplitude = 0.0f;
+		self.period = 0.0f;
+	}
 
-    return self;
+	return self;
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if (currentTime == 0)
-        return startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if (currentTime == 0)
+		return startValue;
 
-    if ((currentTime /= duration) == 1)
-        return startValue + changeByValue;
+	if ((currentTime /= duration) == 1)
+		return startValue + changeByValue;
 
-    if (!self.period)
-        self.period = duration * 0.3;
+	if (!self.period)
+		self.period = duration * 0.3;
 
-    float s = 0;
-    if (!self.amplitude || self.amplitude < abs(changeByValue))
-    {
-        self.amplitude = changeByValue;
-        s = self.period / 4;
-    }
-    else
-    {
-        s = self.period / (2 * M_PI) * asin(changeByValue / self.amplitude);
-    }
+	CGFloat s = 0;
+	if (!self.amplitude || self.amplitude < abs(changeByValue))
+	{
+		self.amplitude = changeByValue;
+		s = self.period / 4;
+	}
+	else
+	{
+		s = (CGFloat) (self.period / (2 * M_PI) * asin(changeByValue / self.amplitude));
+	}
 
-    return self.amplitude * pow(2, -10 * currentTime) *
-            sin((currentTime * duration - s) * (2 * M_PI) / self.period) + changeByValue + startValue;
+	return (CGFloat) (self.amplitude * pow(2, -10 * currentTime) *
+			sin((currentTime * duration - s) * (2 * M_PI) / self.period) + changeByValue + startValue);
 }
 
 @end
@@ -120,46 +129,52 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 @property(nonatomic) float period;
 @end
 
-@implementation PKEaseElasticInOut {
+@implementation PKEaseElasticInOut
+{
 }
 
-- (id)init {
-    if (self = [super init]) {
-        self.amplitude = 0.0f;
-        self.period = 0.0f;
-    }
+- (id)init
+{
+	if (self = [super init])
+	{
+		self.amplitude = 0.0f;
+		self.period = 0.0f;
+	}
 
-    return self;
+	return self;
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if (currentTime == 0)
-        return startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if (currentTime == 0)
+		return startValue;
 
-    if ((currentTime /= duration / 2) == 2)
-        return startValue + changeByValue;
+	if ((currentTime /= duration / 2) == 2)
+		return startValue + changeByValue;
 
-    if (!self.period)
-        self.period = duration * (0.3 * 1.5);
+	if (!self.period)
+		self.period = duration * (0.3 * 1.5);
 
-    float s = 0;
-    if (!self.amplitude || self.amplitude < abs(changeByValue))
-    {
-        self.amplitude = changeByValue;
-        s = self.period / 4;
-    }
-    else
-    {
-        s = self.period / (2 * M_PI) * asin(changeByValue / self.amplitude);
-    }
+	CGFloat s = 0;
+	if (!self.amplitude || self.amplitude < abs(changeByValue))
+	{
+		self.amplitude = changeByValue;
+		s = self.period / 4;
+	}
+	else
+	{
+		s = (CGFloat) (self.period / (2 * M_PI) * asin(changeByValue / self.amplitude));
+	}
 
-    if (currentTime < 1)
-    {
-        return -0.5 * (self.amplitude * pow(2, 10 * (currentTime -= 1)) *
-                sin((currentTime * duration - s) * (2 * M_PI) /self.period)) + startValue;
-    }
+	if (currentTime < 1)
+	{
+		currentTime -= 1;
+		return (CGFloat) (-0.5 * (self.amplitude * pow(2, 10 * currentTime) *
+				sin((currentTime * duration - s) * (2 * M_PI) / self.period)) + startValue);
+	}
 
-    return self.amplitude * pow(2, -10 * (currentTime -= 1)) *
-            sin((currentTime * duration - s) * (2 * M_PI) / self.period ) * 0.5 + changeByValue + startValue;
+	currentTime -= 1;
+	return (CGFloat) (self.amplitude * pow(2, -10 * currentTime) *
+			sin((currentTime * duration - s) * (2 * M_PI) / self.period) * 0.5 + changeByValue + startValue);
 }
 @end

@@ -26,39 +26,45 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 
 #import "PKEaseExponential.h"
 
-@implementation PKEaseExponentialIn {
+@implementation PKEaseExponentialIn
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return currentTime == 0 ? startValue : changeByValue * pow(2, 10 * (currentTime / duration - 1)) + startValue;
-}
-
-@end
-
-@implementation PKEaseExponentialOut {
-}
-
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    return currentTime == duration ? startValue + changeByValue : changeByValue * (-pow(2, -10 * currentTime / duration) + 1) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	return currentTime == 0 ? startValue : changeByValue * pow(2, 10 * (currentTime / duration - 1)) + startValue;
 }
 
 @end
 
-@implementation PKEaseExponentialInOut {
+@implementation PKEaseExponentialOut
+{
 }
 
-- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration {
-    if (currentTime == 0)
-        return startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	return currentTime == duration ? startValue + changeByValue : changeByValue * (-pow(2, -10 * currentTime / duration) + 1) + startValue;
+}
 
-    if (currentTime == duration)
-        return startValue + changeByValue;
+@end
 
-    if ((currentTime /= duration / 2) < 1)
-        return changeByValue / 2 * pow(2, 10 * (currentTime - 1)) + startValue;
+@implementation PKEaseExponentialInOut
+{
+}
 
-    currentTime -= 1;
-    return changeByValue / 2 * (-pow(2, -10 * currentTime) + 2) + startValue;
+- (CGFloat)getValue: (CGFloat)currentTime startValue: (CGFloat)startValue changeByValue: (CGFloat)changeByValue duration: (CGFloat)duration
+{
+	if (currentTime == 0)
+		return startValue;
+
+	if (currentTime == duration)
+		return startValue + changeByValue;
+
+	if ((currentTime /= duration / 2) < 1)
+		return changeByValue / 2 * pow(2, 10 * (currentTime - 1)) + startValue;
+
+	currentTime -= 1;
+	return changeByValue / 2 * (-pow(2, -10 * currentTime) + 2) + startValue;
 }
 
 @end

@@ -23,21 +23,25 @@
 #import "PKAnimationOptions.h"
 #import "PKEaseLinear.h"
 
-@implementation PKAnimationOptions {
+@implementation PKAnimationOptions
+{
 }
 
-- (id)init {
-    if (self = [super init]) {
-        self.ease = [[PKEaseLinear alloc] init];
-        self.delay = [NSNumber numberWithFloat: 0.0f];
-    }
+- (id)init
+{
+	if (self = [super init])
+	{
+		self.ease = [[PKEaseLinear alloc] init];
+		self.delay = [NSNumber numberWithFloat: 0.0f];
+	}
 
-    return self;
+	return self;
 }
 
-- (void)dealloc {
-    self.ease = nil;
-    self.delay = nil;
+- (void)dealloc
+{
+	self.ease = nil;
+	self.delay = nil;
 }
 
 @end
