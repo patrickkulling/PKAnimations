@@ -58,7 +58,7 @@ All easing equations need to conform to the given `PKEase` protocol:
 
 * [FIX] Retain cycle with using CAAnimation
 * [FIX] Compiler warnings
-* [INFO} bump MGCommand dependency to version 0.2.0 to fix memory leaks
+* [INFO] bump MGCommand dependency to version 0.2.0 to fix memory leaks
 
 **0.1.2** (06-17-2013)
 
