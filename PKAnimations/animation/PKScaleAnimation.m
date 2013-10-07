@@ -71,13 +71,6 @@ static const CGFloat FPS = 30.0f;
     return self;
 }
 
-
-- (void)dealloc {
-    self.animationKey = nil;
-    self.animation = nil;
-    self.options = nil;
-}
-
 - (void)execute {
     float delay = [self.options.delay floatValue];
 
@@ -109,6 +102,8 @@ static const CGFloat FPS = 30.0f;
     if(self.completeHandler != nil) {
         self.completeHandler();
     }
+    
+    self.animation = nil;
 }
 
 - (void)startAnimation {
