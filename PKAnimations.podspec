@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PKAnimations"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "A convenient way to run UIKit Animations in sequence and/or parallel using different easing equations."
   s.homepage     = "https://github.com/patrickkulling/PKAnimations"
   s.license      = 'MIT'
