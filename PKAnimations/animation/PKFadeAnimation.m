@@ -152,7 +152,7 @@ static const CGFloat FPS = 30.0f;
 
 - (NSMutableArray *)calculateValues
 {
-	NSInteger frames = self.duration * FPS;
+	NSInteger frames = (NSInteger) (self.duration * FPS) - 1;
 	float by = (self.to - self.from);
 
 	NSMutableArray *transforms = [NSMutableArray array];
@@ -163,6 +163,8 @@ static const CGFloat FPS = 30.0f;
 
 		[transforms addObject: [NSNumber numberWithFloat: value]];
 	}
+
+	[transforms addObject: [NSNumber numberWithFloat: self.to]];
 
 	return transforms;
 }
