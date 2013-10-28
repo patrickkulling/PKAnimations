@@ -54,11 +54,14 @@ All easing equations need to conform to the given `PKEase` protocol:
 ```
 
 ## Changelog
-**0.2.0** (10-07-2013)
 
-* [FIX] Retain cycle with using CAAnimation
-* [FIX] Compiler warnings
-* [INFO] bump MGCommand dependency to version 0.2.0 to fix memory leaks
+**0.2.2** (10-28-2013)
+
+* [FIX] Out of bounds issues for a duration of 0.0f
+
+**0.2.1** (10-17-2013)
+
+* [FIX] Rounding issues for some Easing functions
 
 **0.1.2** (06-17-2013)
 
