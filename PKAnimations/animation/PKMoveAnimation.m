@@ -156,7 +156,11 @@ static const CGFloat FPS = 30.0f;
 
 - (NSMutableArray *)calculateValues
 {
-	NSInteger frames = (NSInteger) (self.duration * FPS) - 1;
+	NSInteger totalFrames = (NSInteger) (self.duration * FPS);
+	NSInteger frames = totalFrames - 1;
+	if(frames < 0)
+		frames = 0;
+
 	NSMutableArray *transforms = [NSMutableArray array];
 
 	for (NSUInteger i = 0; i < frames; i++)
@@ -168,7 +172,9 @@ static const CGFloat FPS = 30.0f;
 		[transforms addObject: [NSValue valueWithCGPoint: point]];
 	}
 
-	[transforms addObject: [NSValue valueWithCGPoint: self.by]];
+	if(totalFrames > 0) {
+		[transforms addObject: [NSValue valueWithCGPoint: self.by]];
+	}
 
 	return transforms;
 }
