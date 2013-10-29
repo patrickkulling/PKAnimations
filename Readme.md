@@ -63,6 +63,12 @@ All easing equations need to conform to the given `PKEase` protocol:
 
 * [FIX] Rounding issues for some Easing functions
 
+**0.2.0** (10-07-2013)
+
+* [FIX] Retain cycle with using CAAnimation
+* [FIX] Compiler warnings
+* [INFO] bump MGCommand dependency to version 0.2.0 to fix memory leaks
+
 **0.1.2** (06-17-2013)
 
 * [NEW] Add PKAnimations.h header file to import all dependencies at once
