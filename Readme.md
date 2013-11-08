@@ -55,6 +55,10 @@ All easing equations need to conform to the given `PKEase` protocol:
 
 ## Changelog
 
+**0.2.3** (11-08-2013)
+
+* [INFO] Remove fixed version for MGCommand dependency
+
 **0.2.2** (10-28-2013)
 
 * [FIX] Out of bounds issues for a duration of 0.0f
