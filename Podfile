@@ -1,6 +1,6 @@
 platform :ios, '5.0'
 
-pod 'MGCommand', 	'0.2.0'
+pod 'MGCommand'
 
 target :PKAnimationsTests, :exclusive => true do
     pod 'Kiwi'
