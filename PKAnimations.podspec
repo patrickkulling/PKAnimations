@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.dependency 'MGCommand'
   s.ios.frameworks = 'Foundation', 'QuartzCore', 'CoreGraphics', 'UIKit'
+  s.prefix_header_contents = "#import <QuartzCore/QuartzCore.h>"
 end
